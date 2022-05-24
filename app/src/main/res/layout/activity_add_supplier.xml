@@ -63,8 +63,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Supplier Name"
-                    android:id="@+id/name"
-                    android:inputType="textEmailAddress"
+                    android:id="@+id/sup_name"
+                    android:inputType="text"
                     android:paddingBottom="16dp"
                     android:layout_marginBottom="20dp"/>
 
@@ -78,8 +78,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Supplier Call"
-                    android:id="@+id/phonenumber"
-                    android:inputType="textEmailAddress"
+                    android:id="@+id/sup_phonenumber"
+                    android:inputType="number"
                     android:paddingBottom="16dp"
                     android:layout_marginBottom="20dp"/>
 
@@ -93,7 +93,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Supplier Email"
-                    android:id="@+id/email"
+                    android:id="@+id/sup_email"
                     android:inputType="textEmailAddress"
                     android:paddingBottom="16dp"
                     android:layout_marginBottom="20dp"/>
@@ -108,8 +108,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Supplier Address"
-                    android:id="@+id/address"
-                    android:inputType="textEmailAddress"
+                    android:id="@+id/sup_address"
+                    android:inputType="text"
                     android:paddingBottom="16dp"
                     android:layout_marginBottom="20dp"/>
 

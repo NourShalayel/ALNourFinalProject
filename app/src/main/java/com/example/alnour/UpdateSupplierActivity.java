@@ -16,9 +16,9 @@ public class UpdateSupplierActivity extends AppCompatActivity {
         init();
     }
     public void init(){
-        name = findViewById(R.id.name);
-        phone = findViewById(R.id.phonenumber);
-        email = findViewById(R.id.email);
-        address = findViewById(R.id.address);
+        name = findViewById(R.id.edit_name);
+        phone = findViewById(R.id.edit_phonenumber);
+        email = findViewById(R.id.edit_email);
+        address = findViewById(R.id.edit_address);
     }
 }

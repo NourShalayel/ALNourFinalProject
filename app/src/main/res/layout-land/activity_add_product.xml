@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,19 +21,18 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/logoorange"/>
+                android:src="@drawable/logoorange" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Update Customer"
                 android:layout_marginTop="25dp"
-                android:textSize="35dp"
                 android:fontFamily="cursive"
+                android:text="Add Product"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                 android:textColor="@android:color/white"
+                android:textSize="35dp"
                 android:textStyle="bold" />
-
 
 
         </LinearLayout>
@@ -53,17 +48,16 @@
             android:padding="@dimen/margin_short">
 
             <com.google.android.material.textfield.TextInputLayout
+
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pro_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Customer Name"
-                    android:id="@+id/edit_cus_name"
-                    android:inputType="text"
-                    android:layout_marginBottom="20dp"/>
+                    android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -72,12 +66,12 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/productCode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Customer Call"
-                    android:id="@+id/edit_cus_phonenumber"
-                    android:inputType="number"
-                    android:layout_marginBottom="20dp"/>
+                    android:hint="Product Code"
+                    android:inputType="number" />
+
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -86,12 +80,11 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/productPrice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Customer Email"
-                    android:id="@+id/edit_cus_email"
-                    android:inputType="textEmailAddress"
-                    android:layout_marginBottom="20dp"/>
+                    android:hint="Product Price"
+                    android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,29 +93,75 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/productUnit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Customer Address"
-                    android:id="@+id/edit_cus_address"
-                    android:inputType="text"
-                    android:layout_marginBottom="20dp"/>
+                    android:hint="Product Unit"
+                    android:inputType="number" />
+
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/productDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Product Description"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:scrollbars="vertical" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/selectCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10px"
+                    android:layout_weight="1"
+                    android:hint="Category"
+                    android:inputType="none"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/selectSupplier"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10px"
+                    android:layout_weight="1"
+                    android:hint="Category"
+                    android:inputType="none"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
 
             <Button
+                android:id="@+id/addProduct"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_short"
                 android:background="@drawable/cornered_button"
-                android:text="Update Customer"
-                android:textSize="18dp"
-                android:id="@+id/updateCustomer"
-
-                android:textColor="@android:color/white" />
-
-
+                android:text="Add Product"
+                android:textColor="@android:color/white"
+                android:textSize="18dp" />
 
 
         </LinearLayout>

@@ -61,8 +61,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Customer Name"
-                    android:id="@+id/name"
-                    android:inputType="textEmailAddress"
+                    android:id="@+id/cus_name"
+                    android:inputType="text"
                     android:layout_marginBottom="20dp"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -75,7 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Customer Call"
-                    android:id="@+id/phonenumber"
+                    android:id="@+id/cus_phonenumber"
                     android:inputType="textEmailAddress"
                     android:layout_marginBottom="20dp"/>
 
@@ -103,7 +103,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Customer Address"
-                    android:id="@+id/address"
+                    android:id="@+id/cus_address"
                     android:inputType="textEmailAddress"
                     android:layout_marginBottom="20dp"/>
 

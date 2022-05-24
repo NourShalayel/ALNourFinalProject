@@ -12,7 +12,7 @@
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout-land/activity_update_customer.xml" value="0.15885416666666666" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout-land/activity_update_supplier.xml" value="0.1728395061728395" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout/activity_add_customer.xml" value="0.22" />
-        <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout/activity_add_product.xml" value="0.25" />
+        <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout/activity_add_product.xml" value="0.14628623188405798" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout/activity_add_supplier.xml" value="0.15896739130434784" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout/activity_dashboard.xml" value="0.12" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout/activity_login.xml" value="0.22" />
@@ -25,6 +25,25 @@
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout/fragment_dash_board.xml" value="0.1381340579710145" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout/fragment_product.xml" value="0.14628623188405798" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout/fragment_supplier.xml" value="0.1381340579710145" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/activity_add_customer.xml" value="0.15024630541871922" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/activity_add_product.xml" value="0.2" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/activity_add_supplier.xml" value="0.21164021164021163" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/activity_login.xml" value="0.21164021164021163" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/activity_update_customer.xml" value="0.21164021164021163" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/activity_update_supplier.xml" value="0.21164021164021163" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_customer.xml" value="0.25" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_product.xml" value="0.264" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_products.xml" value="0.1585144927536232" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_supplier.xml" value="0.25" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_list_item.xml" value="0.1585144927536232" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_login.xml" value="0.16259057971014493" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_main.xml" value="0.15443840579710144" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_recycler_des.xml" value="0.15443840579710144" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_update_customer.xml" value="0.25" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_update_supplier.xml" value="0.25" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/fragment_customer.xml" value="0.15443840579710144" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/fragment_dash_board.xml" value="0.15443840579710144" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/fragment_product.xml" value="0.10989583333333333" />
       </map>
     </option>
   </component>

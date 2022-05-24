@@ -17,9 +17,9 @@ public class AddCustomerActivity extends AppCompatActivity {
 
     }
     public void init(){
-        name = findViewById(R.id.name);
-        phone = findViewById(R.id.phonenumber);
-        email = findViewById(R.id.email);
-        address = findViewById(R.id.address);
+        name = findViewById(R.id.cus_name);
+        phone = findViewById(R.id.cus_phonenumber);
+        email = findViewById(R.id.cus_email);
+        address = findViewById(R.id.cus_address);
     }
 }
