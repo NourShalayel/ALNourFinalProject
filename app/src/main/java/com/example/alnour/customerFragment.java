@@ -19,7 +19,7 @@ public class customerFragment extends Fragment {
 
 
         View v = inflater.inflate(R.layout.fragment_customer, container, false);
-        ;
+
         return v;
     }
 }
