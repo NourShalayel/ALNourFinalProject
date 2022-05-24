@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add Customer"
+                android:text="Add Supplier"
                 android:layout_marginTop="25dp"
                 android:textSize="35dp"
                 android:fontFamily="cursive"
@@ -60,7 +60,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Customer Name"
+                    android:hint="Supplier Name"
                     android:id="@+id/name"
                     android:inputType="textEmailAddress"
                     android:layout_marginBottom="20dp"/>
@@ -74,7 +74,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Customer Call"
+                    android:hint="Supplier Call"
                     android:id="@+id/phonenumber"
                     android:inputType="textEmailAddress"
                     android:layout_marginBottom="20dp"/>
@@ -88,7 +88,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Customer Email"
+                    android:hint="Supplier Email"
                     android:id="@+id/email"
                     android:inputType="textEmailAddress"
                     android:layout_marginBottom="20dp"/>
@@ -102,7 +102,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Customer Address"
+                    android:hint="Supplier Address"
                     android:id="@+id/address"
                     android:inputType="textEmailAddress"
                     android:layout_marginBottom="20dp"/>
@@ -116,9 +116,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_short"
                 android:background="@drawable/cornered_button"
-                android:text="Add Customer"
+                android:text="Add Supplier"
                 android:textSize="18dp"
-                android:id="@+id/addcustomer"
+                android:id="@+id/addsupplier"
 
                 android:textColor="@android:color/white" />
 

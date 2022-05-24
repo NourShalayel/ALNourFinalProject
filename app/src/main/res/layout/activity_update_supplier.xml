@@ -5,48 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".MainActivity">
+    tools:context=".AddCustomerActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:weightSum="2">
 
         <!-- Weight 1 -->
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight=".5"
             android:background="@color/colorPrimaryDark"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/imgLogin"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:src="@drawable/logoorange"/>
 
             <TextView
+                android:id="@+id/txtlogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add Customer"
+                android:text="Update Supplier"
                 android:layout_marginTop="25dp"
-                android:textSize="35dp"
+                android:textSize="30dp"
                 android:fontFamily="cursive"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
 
 
-
         </LinearLayout>
         <!-- Weight 1 -->
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_margin="@dimen/margin_default"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:background="@android:color/white"
             android:gravity="center"
             android:orientation="vertical"
@@ -60,9 +62,10 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Customer Name"
+                    android:hint="Supplier Name"
                     android:id="@+id/name"
                     android:inputType="textEmailAddress"
+                    android:paddingBottom="16dp"
                     android:layout_marginBottom="20dp"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -74,9 +77,10 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Customer Call"
+                    android:hint="Supplier Call"
                     android:id="@+id/phonenumber"
                     android:inputType="textEmailAddress"
+                    android:paddingBottom="16dp"
                     android:layout_marginBottom="20dp"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -88,9 +92,10 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Customer Email"
+                    android:hint="Supplier Email"
                     android:id="@+id/email"
                     android:inputType="textEmailAddress"
+                    android:paddingBottom="16dp"
                     android:layout_marginBottom="20dp"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -102,9 +107,10 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Customer Address"
+                    android:hint="Supplier Address"
                     android:id="@+id/address"
                     android:inputType="textEmailAddress"
+                    android:paddingBottom="16dp"
                     android:layout_marginBottom="20dp"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -116,13 +122,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_short"
                 android:background="@drawable/cornered_button"
-                android:text="Add Customer"
+                android:text="Update Supplier"
                 android:textSize="18dp"
-                android:id="@+id/addcustomer"
+                android:id="@+id/updatesupplier"
 
                 android:textColor="@android:color/white" />
-
-
 
 
         </LinearLayout>
