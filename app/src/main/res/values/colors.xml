@@ -11,4 +11,12 @@
     <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#212121</color>
     <color name="colorAccent">#ff6d00</color>
+
+
+    <color name="colorPrimar">@android:color/holo_green_light</color>
+    <color name="colorPrimaryDar">#303F9F</color>
+    <color name="colorAccen">#FF4081</color>
+    <color name="colorWhit">#ffffff</color>
+    <color name="colorBlac">#000000</color>
+    <color name="colorBorde">#d0ced0</color>
 </resources>
