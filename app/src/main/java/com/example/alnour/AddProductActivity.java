@@ -17,7 +17,7 @@ public class AddProductActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_product);
 
-        Spinner cat_list = findViewById(R.id.selectCategory);
+        Spinner cat_list = findViewById(R.id.selectCategory );
         Spinner sup_list = findViewById(R.id.selectSupplier);
         String[] cat_items = { "Chai Latte", "Green Tea", "Black Tea" };
         String[] sup_items = { "Chai Latte", "Green Tea", "Black Tea" };

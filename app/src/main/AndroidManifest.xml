@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlNour">
         <activity
+            android:name=".InvoiceDesign"
+            android:exported="false" />
+        <activity
+            android:name=".ProductDesign"
+            android:exported="false" />
+        <activity
+            android:name=".AddInvoiceActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddProductActivity"
             android:exported="false" />
         <activity
