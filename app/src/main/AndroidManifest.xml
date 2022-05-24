@@ -10,9 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlNour">
         <activity
-            android:name=".Dashboard"
-            android:exported="true" >
-        </activity>
+            android:name=".UpdateCustomerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddCustomerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerActivityDes"
+            android:exported="true" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />

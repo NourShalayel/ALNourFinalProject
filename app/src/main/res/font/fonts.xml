@@ -8,4 +8,6 @@
         android:fontStyle="italic"
         android:fontWeight="400"
         android:font="@font/antic" />
+
+
 </font-family>

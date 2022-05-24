@@ -6,11 +6,18 @@
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/drawable/cornered_button.xml" value="0.1" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/drawable/ic_graphic_eq_orange_24dp.xml" value="0.1" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/font/fonts.xml" value="0.234375" />
+        <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout-land/activity_add_customer.xml" value="0.16" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout-land/activity_login.xml" value="0.16" />
+        <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout-land/activity_update_customer.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout/activity_add_customer.xml" value="0.22" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout/activity_dashboard.xml" value="0.12" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout/activity_main.xml" value="0.16168478260869565" />
+        <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout/activity_recycler_des.xml" value="0.5" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout/activity_splach.xml" value="0.2" />
+        <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout/activity_update_customer.xml" value="0.1322463768115942" />
+        <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout/fragment_customer.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/layout/fragment_supplier.xml" value="0.1381340579710145" />
       </map>
     </option>
   </component>

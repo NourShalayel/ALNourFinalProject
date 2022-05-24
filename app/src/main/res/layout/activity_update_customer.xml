@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".MainActivity">
+    tools:context=".AddCustomerActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,8 +16,8 @@
         <!-- Weight 1 -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:layout_weight=".5"
             android:background="@color/colorPrimaryDark"
             android:gravity="center"
             android:orientation="vertical"
@@ -25,21 +25,20 @@
 
             <ImageView
                 android:id="@+id/imgLogin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:src="@drawable/logoorange"/>
 
             <TextView
                 android:id="@+id/txtlogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Welcome Admin"
+                android:text="Update Customer"
                 android:layout_marginTop="25dp"
-                android:textSize="35dp"
+                android:textSize="30dp"
                 android:fontFamily="cursive"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                 android:textColor="@android:color/white"
-
                 android:textStyle="bold" />
 
 
@@ -49,11 +48,27 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="@dimen/margin_default"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:background="@android:color/white"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="@dimen/margin_short">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Customer Name"
+                    android:id="@+id/name"
+                    android:inputType="textEmailAddress"
+                    android:paddingBottom="16dp"
+                    android:layout_marginBottom="20dp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -62,59 +77,57 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/email"
-                    android:id="@+id/email"
+                    android:hint="Customer Call"
+                    android:id="@+id/phonenumber"
                     android:inputType="textEmailAddress"
-                    android:paddingBottom="16dp" />
+                    android:paddingBottom="16dp"
+                    android:layout_marginBottom="20dp"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_short"
-                app:passwordToggleEnabled="true">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/password"
-                    android:id="@+id/password"
-                    android:inputType="textPassword"
-                    android:paddingBottom="16dp" />
+                    android:hint="Customer Email"
+                    android:id="@+id/email"
+                    android:inputType="textEmailAddress"
+                    android:paddingBottom="16dp"
+                    android:layout_marginBottom="20dp"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Customer Address"
+                    android:id="@+id/address"
+                    android:inputType="textEmailAddress"
+                    android:paddingBottom="16dp"
+                    android:layout_marginBottom="20dp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_short"
-                android:orientation="horizontal"
-                android:weightSum="2">
+                android:background="@drawable/cornered_button"
+                android:text="Update Customer"
+                android:textSize="18dp"
+                android:id="@+id/login"
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margin_short"
-                    android:layout_weight="1"
-                    android:text="Forgot password ??"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="14sp"
-                    android:id="@+id/forgot"
-                    android:textStyle="bold" />
+                android:textColor="@android:color/white" />
 
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margin_short"
-                    android:layout_weight="1"
-                    android:background="@drawable/cornered_button"
-                    android:text="Login"
-                    android:id="@+id/login"
-                    android:textColor="@android:color/white" />
-
-
-            </LinearLayout>
 
         </LinearLayout>
 
