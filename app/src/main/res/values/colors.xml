@@ -12,6 +12,8 @@
     <color name="colorPrimaryDark">#212121</color>
     <color name="colorAccent">#ff6d00</color>
     <color name="colortrans">#27FF6D00</color>
+    <color name="coloricon">#B5FF6D00</color>
+    <color name="colortext">#310A4583</color>
     <color name="whitetrans">#D7FFFFFF</color>
     <color name="stcolor">#A888EA</color>
     <color name="encolor">#5836F3</color>

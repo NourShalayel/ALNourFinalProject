@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlNour">
         <activity
+            android:name=".ProductCartdesActivity"
+            android:exported="false" />
+        <activity
             android:name=".InvoiceDesign"
             android:exported="false" />
         <activity

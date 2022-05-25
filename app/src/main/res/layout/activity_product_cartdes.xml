@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".InvoiceDesign">
+    tools:context=".ProductCartdesActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -25,15 +25,15 @@
                 android:id="@+id/product_img"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:scaleType="fitXY"
                 android:layout_gravity="center"
+                android:scaleType="fitXY"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/custom" />
 
 
             <LinearLayout
-                android:layout_width="160dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="3dp"
@@ -98,100 +98,63 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Unit: " />
-
-                    <TextView
-                        android:id="@+id/product_unit"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="23"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Category: " />
-
-                    <TextView
-                        android:id="@+id/product_cat"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Category Type "
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Supplier: " />
-
-                    <TextView
-                        android:id="@+id/product_supplier"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Supplier Type "
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Description: " />
-
-                    <TextView
-                        android:id="@+id/product_desc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="New Product "
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
 
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-            <Button
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:backgroundTint="@color/colortrans"
-                android:text="Add"
-                android:layout_marginStart="10dp"
-                android:layout_gravity="center"
-                android:drawableLeft="@drawable/ic_baseline_add_24"
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="end"
+                    android:shadowColor="@color/colortrans"
+                    android:background="@drawable/cancel"
 
-                />
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="50dp"
+                    >
+
+                    <Button
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/ic_plus"
+                        android:backgroundTint="@color/coloricon"
+                        android:shadowColor="@color/colortrans" />
+                    <TextView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@color/colortext"
+                        android:text="0"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="15dp"
+
+                        />
+                    <Button
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:background="@drawable/min"
+                        android:backgroundTint="@color/coloricon"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:shadowColor="@color/colortrans" />
+
+                </LinearLayout>
+            </LinearLayout>
 
         </LinearLayout>
 

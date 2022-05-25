@@ -22,11 +22,12 @@ public class DashBoardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_dash_board, container, false);
-        View c = v.findViewById(R.id.customer_btn);
-        View s = v.findViewById(R.id.sypplier_btn);
-        View p = v.findViewById(R.id.productbtn);
+        View category = v.findViewById(R.id.customer_btn);
+        View supplier = v.findViewById(R.id.sypplier_btn);
+        View product = v.findViewById(R.id.productbtn);
+        View invoice = v.findViewById(R.id.invoice_btn);
 
-        c.setOnClickListener(new View.OnClickListener() {
+        category.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 customerFragment customerFrag = new customerFragment();
@@ -37,7 +38,7 @@ public class DashBoardFragment extends Fragment {
             }
         });
 
-        s.setOnClickListener(new View.OnClickListener() {
+        supplier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SupplierFragment supplierFrag = new SupplierFragment();
@@ -49,13 +50,24 @@ public class DashBoardFragment extends Fragment {
         });
 
 
-        p.setOnClickListener(new View.OnClickListener() {
+        product.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ProductFragment productFrag = new ProductFragment();
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.fcv, productFrag);
+                ft.commit();
+            }
+        });
+
+        invoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InvoiceFragment invoiceFrag = new InvoiceFragment();
+                FragmentManager fm = getActivity().getSupportFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.fcv, invoiceFrag);
                 ft.commit();
             }
         });
