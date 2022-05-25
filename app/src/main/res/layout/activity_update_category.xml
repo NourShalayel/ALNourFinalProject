@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".AddSupplierActivity">
+    tools:context=".UpdateCategoryActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_weight=".5"
+            android:layout_weight="1"
             android:background="@color/colorPrimaryDark"
             android:gravity="center"
             android:orientation="vertical"
@@ -33,7 +33,7 @@
                 android:id="@+id/txtlogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add Supplier"
+                android:text="Update Category"
                 android:layout_marginTop="25dp"
                 android:textSize="30dp"
                 android:fontFamily="cursive"
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="@dimen/margin_default"
-            android:layout_weight="1.5"
+            android:layout_weight="1"
             android:background="@android:color/white"
             android:gravity="center"
             android:orientation="vertical"
@@ -56,77 +56,29 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_cat_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Supplier Name"
-                    android:id="@+id/sup_name"
+                    android:layout_marginBottom="20dp"
+                    android:hint="Category Name"
                     android:inputType="text"
-                    android:paddingBottom="16dp"
-                    android:layout_marginBottom="20dp"/>
+                    android:paddingBottom="16dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Supplier Call"
-                    android:id="@+id/sup_phonenumber"
-                    android:inputType="number"
-                    android:paddingBottom="16dp"
-                    android:layout_marginBottom="20dp"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Supplier Email"
-                    android:id="@+id/sup_email"
-                    android:inputType="textEmailAddress"
-                    android:paddingBottom="16dp"
-                    android:layout_marginBottom="20dp"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Supplier Address"
-                    android:id="@+id/sup_address"
-                    android:inputType="text"
-                    android:paddingBottom="16dp"
-                    android:layout_marginBottom="20dp"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
 
 
             <Button
+                android:id="@+id/updateCustomer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_short"
                 android:background="@drawable/cornered_button"
-                android:text="Add Supplier"
-                android:textSize="18dp"
-                android:id="@+id/addsupplier"
-
-                android:textColor="@android:color/white" />
+                android:text="Update Category"
+                android:textColor="@android:color/white"
+                android:textSize="18dp" />
 
 
         </LinearLayout>

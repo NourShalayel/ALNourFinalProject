@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".AddCustomerActivity">
+    tools:context=".UpdateCategoryActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add Customer"
+                android:text="Update Customer"
                 android:layout_marginTop="25dp"
                 android:textSize="35dp"
                 android:fontFamily="cursive"
@@ -60,51 +60,9 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Customer Name"
-                    android:id="@+id/cus_name"
+                    android:hint="Category Name"
+                    android:id="@+id/edit_cat_name"
                     android:inputType="text"
-                    android:layout_marginBottom="20dp"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Customer Call"
-                    android:id="@+id/cus_phonenumber"
-                    android:inputType="textEmailAddress"
-                    android:layout_marginBottom="20dp"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Customer Email"
-                    android:id="@+id/email"
-                    android:inputType="textEmailAddress"
-                    android:layout_marginBottom="20dp"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Customer Address"
-                    android:id="@+id/cus_address"
-                    android:inputType="textEmailAddress"
                     android:layout_marginBottom="20dp"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -116,9 +74,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_short"
                 android:background="@drawable/cornered_button"
-                android:text="Add Customer"
+                android:text="Update Category"
                 android:textSize="18dp"
-                android:id="@+id/addcustomer"
+                android:id="@+id/updateCategory"
 
                 android:textColor="@android:color/white" />
 

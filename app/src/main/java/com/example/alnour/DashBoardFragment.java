@@ -23,18 +23,26 @@ public class DashBoardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_dash_board, container, false);
-        View category = v.findViewById(R.id.customer_btn);
+        View customer = v.findViewById(R.id.customer_btn);
         View supplier = v.findViewById(R.id.sypplier_btn);
         View product = v.findViewById(R.id.productbtn);
         View invoice = v.findViewById(R.id.invoice_btn);
         View report = v.findViewById(R.id.reportbtn);
+        View category = v.findViewById(R.id.category_btn);
 
-        category.setOnClickListener(new View.OnClickListener() {
+        DashBoardFragment dashFraq = new DashBoardFragment();
+
+
+
+
+        customer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 customerFragment customerFrag = new customerFragment();
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
+                ft.addToBackStack(null);
                 ft.replace(R.id.fcv, customerFrag);
                 ft.commit();
             }
@@ -46,6 +54,8 @@ public class DashBoardFragment extends Fragment {
                 SupplierFragment supplierFrag = new SupplierFragment();
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
+                ft.addToBackStack(null);
+
                 ft.replace(R.id.fcv, supplierFrag);
                 ft.commit();
             }
@@ -58,6 +68,8 @@ public class DashBoardFragment extends Fragment {
                 ProductFragment productFrag = new ProductFragment();
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
+                ft.addToBackStack(null);
+
                 ft.replace(R.id.fcv, productFrag);
                 ft.commit();
             }
@@ -69,6 +81,8 @@ public class DashBoardFragment extends Fragment {
                 InvoiceFragment invoiceFrag = new InvoiceFragment();
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
+                ft.addToBackStack(null);
+
                 ft.replace(R.id.fcv, invoiceFrag);
                 ft.commit();
             }
@@ -81,6 +95,21 @@ public class DashBoardFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        category.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CategoryFragment categoryFrag = new CategoryFragment();
+                FragmentManager fm = getActivity().getSupportFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.addToBackStack(null);
+
+                ft.replace(R.id.fcv, categoryFrag);
+                ft.commit();
+            }
+        });
         return v;
+
+
     }
 }
