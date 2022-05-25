@@ -1,5 +1,6 @@
 package com.example.alnour;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -26,6 +27,7 @@ public class DashBoardFragment extends Fragment {
         View supplier = v.findViewById(R.id.sypplier_btn);
         View product = v.findViewById(R.id.productbtn);
         View invoice = v.findViewById(R.id.invoice_btn);
+        View report = v.findViewById(R.id.reportbtn);
 
         category.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +71,14 @@ public class DashBoardFragment extends Fragment {
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.fcv, invoiceFrag);
                 ft.commit();
+            }
+        });
+
+        report.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext() , ReportsActivity.class);
+                startActivity(intent);
             }
         });
         return v;
