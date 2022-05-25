@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "915055980370",
+    "project_id": "alnour-78dec",
+    "storage_bucket": "alnour-78dec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915055980370:android:97b164fbcabc24f650d48b",
+        "android_client_info": {
+          "package_name": "com.example.alnour"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "915055980370-pf3mpsmvsaiavadt9eal1nfrii097n5i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4E1a1ld67n4APL0W_Yn_7Y9Ynpszddeo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "915055980370-pf3mpsmvsaiavadt9eal1nfrii097n5i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
