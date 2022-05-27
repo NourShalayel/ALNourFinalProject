@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -21,7 +22,6 @@ import com.google.firebase.database.FirebaseDatabase;
 public class UpdateCustomerActivity extends AppCompatActivity {
     public TextInputEditText name, phone, email , address;
     Intent intent ;
-    Bundle data ;
     String id ;
     Button updateCustomerbtn ;
     @Override
@@ -30,20 +30,21 @@ public class UpdateCustomerActivity extends AppCompatActivity {
         getSupportActionBar().hide(); // hide the title bar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
-        setContentView(R.layout.activity_update_category);
+        setContentView(R.layout.activity_update_customer);
 
         super.onCreate(savedInstanceState);
         init();
 
-        intent = getIntent();
+        Bundle b = getIntent().getExtras();
 
-         data = intent.getExtras();
-        if (data != null) {
-             id = data.getString("customerId");
-            name.setText(data.getString("name"));
-            phone.setText(data.getString("call"));
-            email.setText(data.getString("email"));
-            address.setText(data.getString("address"));
+        if (b != null) {
+        Object cus =  b.getSerializable("customer");
+
+             id = b.getString("id");
+            name.setText(b.getString("name"));
+            phone.setText(b.getString("call"));
+            email.setText(b.getString("email"));
+            address.setText(b.getString("address"));
         } else {
             name.setText("");
             phone.setText("");
@@ -55,12 +56,7 @@ public class UpdateCustomerActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (inputValidation()) {
                     if (UpdateCustomer()) {
-//                        CustomerFragment customerFrag = new CustomerFragment();
-//                        FragmentManager fm = getApplicationContext().getSupportFragmentManager();
-//                        FragmentTransaction ft = fm.beginTransaction();
-//                        ft.addToBackStack(null);
-//                        ft.replace(R.id.fcv, customerFrag);
-//                        ft.commit();
+                        finish();
                     }
                 }
             }

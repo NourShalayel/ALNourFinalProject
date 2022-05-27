@@ -3,6 +3,7 @@ package com.example.alnour;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,16 +41,17 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
     public void onBindViewHolder(@NonNull CustomerHolder holder, int position) {
         int i = position;
 
-        String customerId = customer_List.get(position).getId();
-        String name = customer_List.get(position).getName();
-        String call = customer_List.get(position).getCall() ;
-        String email = customer_List.get(position).getEmail() ;
-        String address = customer_List.get(position).getAddress();
+        String customerId = customer_List.get(i).getId();
+        String name = customer_List.get(i).getName();
+        String call = customer_List.get(i).getCall() ;
+        String email = customer_List.get(i).getEmail() ;
+        String address = customer_List.get(i).getAddress();
 
         holder.txtname.setText(name);
         holder.txtphonenumber.setText(call);
         holder.txtemail.setText(email);
         holder.txtaddress.setText(address);
+
         holder.delete_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,13 +65,14 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context , UpdateCustomerActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("customerId" , customerId);
-                bundle.putString("name" , name);
-                bundle.putString("call" , call);
-                bundle.putString("email" , email);
-                bundle.putString("address" , address);
-                intent.putExtra("bundleCus",bundle);
+               Bundle b = new Bundle();
+//                b.putSerializable("customer",customer_List.get(i));
+                intent.putExtra("id" , customerId );
+                intent.putExtra("name" , name );
+                intent.putExtra("call" , call );
+                intent.putExtra("email" , email );
+                intent.putExtra("address" , address );
+
                 context.startActivity(intent);
 
             }
