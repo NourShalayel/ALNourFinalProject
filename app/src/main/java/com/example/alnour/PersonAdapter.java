@@ -12,19 +12,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.PersonHolder> {
-    Activity activity;
     ArrayList<Person> personList;
 
-    public PersonAdapter(Activity activity, ArrayList<Person> personList) {
-        this.activity = activity;
+    public PersonAdapter(ArrayList<Person> personList) {
         this.personList = personList;
     }
 
     @NonNull
     @Override
     public PersonHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(activity).inflate(R.layout.activity_recycler_des, parent, false);
-        return new PersonAdapter.PersonHolder(v);
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View v = inflater.inflate(R.layout.activity_recycler_des, parent, false);
+        return new PersonHolder(v);
     }
 
     @Override

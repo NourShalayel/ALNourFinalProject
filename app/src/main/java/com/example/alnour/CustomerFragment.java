@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -27,7 +28,8 @@ import java.util.ArrayList;
 public class CustomerFragment extends Fragment {
 
     RecyclerView rfCustomer;
-
+    ArrayList<Person> cus_list = new ArrayList<>() ;
+    FloatingActionButton addCustomer ;
     public CustomerFragment() {
 
     }
@@ -36,17 +38,9 @@ public class CustomerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_customer, container, false);
-        View addCustomer = v.findViewById(R.id.addcustomerbtn);
+        addCustomer = v.findViewById(R.id.addcustomerbtn);
 
         rfCustomer = v.findViewById(R.id.rfCustomer);
-
-//        Intent i = getIntent();
-//        long id = i.getLongExtra("id" , 1 );
-        PersonAdapter cusAdapter = new PersonAdapter(getActivity(), readCustomerFromDB());
-        rfCustomer.setAdapter(cusAdapter);
-
-        RecyclerView.LayoutManager lm = new LinearLayoutManager(getActivity());
-        rfCustomer.setLayoutManager(lm);
 
         addCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,8 +53,13 @@ public class CustomerFragment extends Fragment {
         return v;
     }
 
-    public ArrayList<Person> readCustomerFromDB() {
-        ArrayList<Person> cus_list = new ArrayList<>() ;
+    @Override
+    public void onResume() {
+        super.onResume();
+        readCustomerFromDB();
+    }
+
+    public void readCustomerFromDB() {
 
         cus_list.clear();
 
@@ -77,13 +76,19 @@ public class CustomerFragment extends Fragment {
                         cus_list.add(cus);
                         Log.e("ee" , ""+cus_list);
                     }
+
+                    PersonAdapter adapter = new PersonAdapter(cus_list);
+
+                    rfCustomer.setAdapter(adapter);
+                    rfCustomer.setLayoutManager(new LinearLayoutManager((MainActivity)getActivity()));
+                    Toast.makeText(getActivity(), "" + (MainActivity)getActivity() , Toast.LENGTH_SHORT).show();
+
                 } else {
                     String errorMessage = task.getException().getMessage();
                     Toast.makeText(getActivity(), "Error: " + errorMessage, Toast.LENGTH_SHORT).show();
                 }
             }
         });
-        return cus_list;
     }
 
 }
