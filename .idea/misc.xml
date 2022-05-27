@@ -3,20 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/drawable/background_btn.xml" value="0.1" />
-        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_product.xml" value="0.25" />
-        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_supplier.xml" value="0.17300724637681159" />
-        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_invoice_design.xml" value="0.17300724637681159" />
-        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_main.xml" value="0.17300724637681159" />
-        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_product_cartdes.xml" value="0.33" />
-        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_product_design.xml" value="0.17300724637681159" />
-        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_recycler_category.xml" value="0.22" />
-        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_recycler_des.xml" value="0.1105072463768116" />
-        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_reports.xml" value="0.17300724637681159" />
-        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_splach.xml" value="0.17300724637681159" />
-        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/fragment_category.xml" value="0.17300724637681159" />
-        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/fragment_pager_invoice.xml" value="0.13677536231884058" />
-        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/fragment_supplier.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/drawable/cornered_button.xml" value="0.1" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/drawable/ic_graphic_eq_orange_24dp.xml" value="0.1" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/font/fonts.xml" value="0.234375" />
@@ -48,6 +34,7 @@
         <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/activity_update_supplier.xml" value="0.21164021164021163" />
         <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_category.xml" value="0.25" />
         <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_customer.xml" value="0.25" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_invoice.xml" value="0.25" />
         <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_product.xml" value="0.264" />
         <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_products.xml" value="0.1585144927536232" />
         <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_supplier.xml" value="0.25" />
@@ -56,6 +43,7 @@
         <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_login.xml" value="0.16259057971014493" />
         <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_main.xml" value="0.15443840579710144" />
         <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_product_design.xml" value="0.25" />
+        <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_recycler_category.xml" value="0.25" />
         <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_recycler_des.xml" value="0.2" />
         <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_splach.xml" value="0.15172101449275363" />
         <entry key="..\:/Users/nrayd/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_update_customer.xml" value="0.25" />

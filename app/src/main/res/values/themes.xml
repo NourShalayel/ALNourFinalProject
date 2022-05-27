@@ -22,6 +22,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="customfontstyle">
+        <item name="fontFamily">@font/bungee</item>
+    </style>
+
     <style name="Theme.AlNour.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.AlNour.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

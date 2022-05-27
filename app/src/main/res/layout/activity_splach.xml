@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/yellow"
+    android:background="@color/colorPrimaryDark"
     tools:context=".SplachActivity">
 
 
@@ -16,7 +16,7 @@
         android:layout_marginTop="70sp"
         android:layout_marginEnd="70dp"
         android:layout_marginBottom="70dp"
-        android:src="@drawable/logo"
+        android:src="@drawable/logoorange"
         android:transitionName="logo_image"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/black"
+        android:textColor="@color/colorAccent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
@@ -51,6 +51,7 @@
         android:text="AL Nour Sale Point"
         android:textAlignment="center"
         android:textSize="18sp"
+        android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

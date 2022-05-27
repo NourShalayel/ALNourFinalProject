@@ -113,6 +113,9 @@ public class AddProductActivity extends AppCompatActivity {
             }
         });
 
+
+
+
         readCategories();
         readSuppliers();
 
@@ -150,7 +153,6 @@ public class AddProductActivity extends AppCompatActivity {
     }
 
     private void addProductToBD() {
-
 
         if (inputValidation()) {
 
