@@ -69,6 +69,9 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
                 bundle.putString("call" , call);
                 bundle.putString("email" , email);
                 bundle.putString("address" , address);
+                intent.putExtra("bundleCus",bundle);
+                context.startActivity(intent);
+
             }
         });
 

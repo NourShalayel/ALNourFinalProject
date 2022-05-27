@@ -2,6 +2,7 @@ package com.example.alnour;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,13 +18,13 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class SupplierAdapter extends RecyclerView.Adapter<SupplierAdapter.SupplierHolder>{
+public class SupplierAdapter extends RecyclerView.Adapter<SupplierAdapter.SupplierHolder> {
     ArrayList<Person> supplier_List;
-    Context context ;
+    Context context;
 
-    public SupplierAdapter(ArrayList<Person> supplier_List ,Context context) {
+    public SupplierAdapter(ArrayList<Person> supplier_List, Context context) {
         this.supplier_List = supplier_List;
-        this.context = context ;
+        this.context = context;
     }
 
     @NonNull
@@ -31,17 +32,22 @@ public class SupplierAdapter extends RecyclerView.Adapter<SupplierAdapter.Suppli
     public SupplierHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View v = inflater.inflate(R.layout.activity_recycler_des, parent, false);
-        return new SupplierAdapter.SupplierHolder(v);    }
+        return new SupplierAdapter.SupplierHolder(v);
+    }
 
     @Override
     public void onBindViewHolder(@NonNull SupplierAdapter.SupplierHolder holder, int position) {
         int i = position;
-
-        holder.txtname.setText(supplier_List.get(position).getName());
-        holder.txtphonenumber.setText(supplier_List.get(position).getCall());
-        holder.txtemail.setText(supplier_List.get(position).getEmail());
-        holder.txtaddress.setText(supplier_List.get(position).getAddress());
         String supplierId = supplier_List.get(position).getId();
+        String name = supplier_List.get(position).getName();
+        String call = supplier_List.get(position).getCall();
+        String email = supplier_List.get(position).getEmail();
+        String address = supplier_List.get(position).getAddress();
+
+        holder.txtname.setText(name);
+        holder.txtphonenumber.setText(call);
+        holder.txtemail.setText(email);
+        holder.txtaddress.setText(address);
         holder.delete_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,9 +60,19 @@ public class SupplierAdapter extends RecyclerView.Adapter<SupplierAdapter.Suppli
         holder.edit_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context , UpdateSupplierActivity.class);
+                Intent intent = new Intent(context, UpdateSupplierActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("supplierId", supplierId);
+                bundle.putString("name", name);
+                bundle.putString("call", call);
+                bundle.putString("email", email);
+                bundle.putString("address", address);
+                intent.putExtra("bundleCus", bundle);
+                context.startActivity(intent);
+
             }
         });
+
     }
 
     private void deleteSupplier(String supplierId) {
@@ -74,7 +90,7 @@ public class SupplierAdapter extends RecyclerView.Adapter<SupplierAdapter.Suppli
         TextView txtphonenumber;
         TextView txtemail;
         TextView txtaddress;
-        ImageButton edit_btn ;
+        ImageButton edit_btn;
         ImageButton delete_btn;
 
         public SupplierHolder(@NonNull View itemView) {

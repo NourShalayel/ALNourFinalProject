@@ -81,11 +81,11 @@ public class CustomerFragment extends Fragment {
 
                     rfCustomer.setAdapter(adapter);
                     rfCustomer.setLayoutManager(new LinearLayoutManager((MainActivity)getActivity()));
-                    Toast.makeText(getActivity(), "" + (MainActivity)getActivity() , Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getActivity(), "" + (MainActivity)getActivity() , Toast.LENGTH_SHORT).show();
 
                 } else {
                     String errorMessage = task.getException().getMessage();
-                    Toast.makeText(getActivity(), "Error: " + errorMessage, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getActivity(), "Error: " + errorMessage, Toast.LENGTH_SHORT).show();
                 }
             }
         });
