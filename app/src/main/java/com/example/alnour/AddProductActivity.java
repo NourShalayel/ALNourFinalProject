@@ -1,12 +1,14 @@
 package com.example.alnour;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -41,8 +43,8 @@ public class AddProductActivity extends AppCompatActivity {
 
     private TextInputEditText pro_name, pro_code, pro_price, pro_unit, pro_description;
     String cat_id, sup_id;
-    ArrayList<String> cat_items;
-    ArrayList<String> sup_items;
+    ArrayList<String> cat_items = new ArrayList<>();
+    ArrayList<String> sup_items = new ArrayList<>();
     ImageView ivImage;
     Uri selectedImage;
     FloatingActionButton selectImg_btn;
@@ -71,26 +73,21 @@ public class AddProductActivity extends AppCompatActivity {
 
         init();
 
-        cat_items = new ArrayList<>();
-        sup_items = new ArrayList<>();
+        addProductbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addProductToBD();
+            }
+        });
 
-        if (cat_items != null && cat_items.size() != 0) {
-
-            ArrayAdapter<String> cat_adapter = new ArrayAdapter<String>(this,
-                    android.R.layout.simple_spinner_item, cat_items);
-            cat_spinner.setAdapter(cat_adapter);
-            cat_adapter.notifyDataSetChanged();
-
-
-        }
-
-        if (sup_items != null && sup_items.size() != 0) {
-
-            ArrayAdapter<String> sup_adapter = new ArrayAdapter<String>(this,
-                    android.R.layout.simple_spinner_item, sup_items);
-            sup_spinner.setAdapter(sup_adapter);
-            sup_adapter.notifyDataSetChanged();
-        }
+        selectImg_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+                getIntent().setType("image/*");
+                startActivityForResult(i, PICK_IMAGE);
+            }
+        });
 
         cat_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -113,22 +110,6 @@ public class AddProductActivity extends AppCompatActivity {
 
             public void onNothingSelected(AdapterView<?> parent) {
 
-            }
-        });
-
-        addProductbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addProductToBD();
-            }
-        });
-
-        selectImg_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Intent.ACTION_GET_CONTENT);
-                getIntent().setType("image/*");
-                startActivityForResult(i, PICK_IMAGE);
             }
         });
 
@@ -166,27 +147,16 @@ public class AddProductActivity extends AppCompatActivity {
     }
 
     private void addProductToBD() {
-        String name = pro_name.getText().toString();
-        int code = Integer.parseInt(pro_code.getText().toString());
-        double price = Double.parseDouble(pro_price.getText().toString());
-        int unit = Integer.parseInt(pro_unit.getText().toString());
-        String desc = pro_description.getText().toString();
 
-        if (name.isEmpty()) {
-            pro_name.setError("name can not be empty !");
-        } else if (code < 9999999) {
-            pro_code.setError("code must be 8 digits !");
-        } else if (price < 0) {
-            pro_price.setError("price can not be empty !");
-        } else if (unit < 0) {
-            pro_unit.setError("units can not be empty !");
-        } else if (desc.isEmpty()) {
-            pro_name.setError("description can not be empty !");
-        } else if (cat_id.isEmpty()) {
-            Toast.makeText(AddProductActivity.this, "please choice Category !!", Toast.LENGTH_SHORT);
-        } else if (sup_id.isEmpty()) {
-            Toast.makeText(AddProductActivity.this, "please choice Supplier !!", Toast.LENGTH_SHORT);
-        } else {
+
+        if (inputValidation()) {
+
+            String name = pro_name.getText().toString();
+            int code = Integer.parseInt(pro_code.getText().toString());
+            double price = Double.parseDouble(pro_price.getText().toString());
+            int unit = Integer.parseInt(pro_unit.getText().toString());
+            String desc = pro_description.getText().toString();
+
             db = FirebaseDatabase.getInstance();
             ref = db.getReference("products");
             String id = ref.push().getKey();
@@ -214,7 +184,6 @@ public class AddProductActivity extends AppCompatActivity {
                                                 } else {
                                                     String errorMessage = task.getException().getMessage();
                                                     Toast.makeText(AddProductActivity.this, "Fail " + errorMessage, Toast.LENGTH_SHORT).show();
-
                                                 }
                                             }
                                         });
@@ -227,15 +196,12 @@ public class AddProductActivity extends AppCompatActivity {
 
                     }
                 });
-
-
             } else {
                 Toast.makeText(AddProductActivity.this, "please choice image", Toast.LENGTH_SHORT);
             }
-
-
         }
     }
+
 
     @Override
     protected void onResume() {
@@ -257,11 +223,16 @@ public class AddProductActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (task.isSuccessful()) {
                     Iterable<DataSnapshot> data = task.getResult().getChildren();
+                    cat_items.add("Select Category");
                     for (DataSnapshot snap : data) {
                         Category cat = snap.getValue(Category.class);
                         cat_items.add(cat.getName());
                         cat_list.add(cat);
                         Log.d("d", "" + cat);
+
+                        ArrayAdapter<String> cat_adapter = new ArrayAdapter<String>(getApplicationContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, cat_items);
+                        cat_spinner.setAdapter(cat_adapter);
+                        cat_adapter.notifyDataSetChanged();
                     }
                 } else {
                     String errorMessage = task.getException().getMessage();
@@ -283,18 +254,74 @@ public class AddProductActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (task.isSuccessful()) {
                     Iterable<DataSnapshot> data = task.getResult().getChildren();
+                    sup_items.add("Select Supplier");
                     for (DataSnapshot snap : data) {
                         Person sup = snap.getValue(Person.class);
                         sup_items.add(sup.getName());
                         sup_list.add(sup);
                         Log.d("d", "" + sup);
                     }
+                    if (sup_items != null && sup_items.size() != 0) {
+                        ArrayAdapter<String> sup_adapter = new ArrayAdapter<String>(getApplicationContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, sup_items);
+                        sup_spinner.setAdapter(sup_adapter);
+                        sup_adapter.notifyDataSetChanged();
+                    }
+
                 } else {
                     String errorMessage = task.getException().getMessage();
                     Toast.makeText(AddProductActivity.this, "Error: " + errorMessage, Toast.LENGTH_SHORT).show();
                 }
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data != null) {
+            selectedImage = data.getData();
+            ivImage.setImageURI(selectedImage);
+        }
+    }
+
+    public Boolean inputValidation() {
+        boolean flag = true;
+
+        if (pro_name.getText().toString().isEmpty()) {
+            pro_name.setError("Can't be Empty");
+            return false;
+        }
+
+        if (pro_code.getText().toString().isEmpty()) {
+            pro_code.setError("Can't be Empty");
+            return false;
+        }
+
+        if (pro_price.getText().toString().isEmpty()) {
+            pro_price.setError("Can't be Empty");
+            return false;
+        }
+
+        if (pro_unit.getText().toString().isEmpty()) {
+            pro_unit.setError("Can't be Empty");
+            return false;
+        }
+
+        if (pro_description.getText().toString().isEmpty()) {
+            pro_description.setError("Can't be Empty");
+            return false;
+        }
+
+        if (cat_id == null) {
+            Toast.makeText(this, "choose category !!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if (sup_id == null) {
+            Toast.makeText(this, "choose supplier !!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return flag;
     }
 
 }

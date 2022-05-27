@@ -154,9 +154,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+
 
                 <Spinner
                     android:id="@+id/selectCategory"
@@ -164,16 +162,12 @@
                     android:layout_height="50dp"
                     android:layout_marginBottom="10px"
                     android:layout_weight="1"
-                    android:hint="Category"
                     android:inputType="none"
                     android:paddingTop="16dp"
-                    android:paddingBottom="16dp" />
+                    android:paddingBottom="16dp"
+                   />
 
-            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
                 <Spinner
                     android:id="@+id/selectSupplier"
@@ -181,12 +175,10 @@
                     android:layout_height="50dp"
                     android:layout_marginBottom="10px"
                     android:layout_weight="1"
-                    android:hint="Category"
                     android:inputType="none"
                     android:paddingTop="16dp"
                     android:paddingBottom="16dp" />
 
-            </com.google.android.material.textfield.TextInputLayout>
 
 
             <Button
