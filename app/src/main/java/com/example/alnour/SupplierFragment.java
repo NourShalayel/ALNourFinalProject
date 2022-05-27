@@ -76,7 +76,7 @@ public class SupplierFragment extends Fragment {
                             Log.e("ee", "" + sup_list);
                         }
 
-                        PersonAdapter adapter = new PersonAdapter(sup_list);
+                        SupplierAdapter adapter = new SupplierAdapter(sup_list , (MainActivity) getActivity());
 
                         rfSupplier.setAdapter(adapter);
                         rfSupplier.setLayoutManager(new LinearLayoutManager((MainActivity) getActivity()));

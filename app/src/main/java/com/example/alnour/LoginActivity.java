@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         inti();
         lisner();
 
-        Typeface typeface = getResources().getFont(R.font.bungee);
+        Typeface typeface = getResources().getFont(R.font.caveat);
         txtlogin.setTypeface(typeface);
 
     }

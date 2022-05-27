@@ -77,7 +77,7 @@ public class CustomerFragment extends Fragment {
                         Log.e("ee" , ""+cus_list);
                     }
 
-                    PersonAdapter adapter = new PersonAdapter(cus_list);
+                    CustomerAdapter adapter = new CustomerAdapter(cus_list , (MainActivity)getActivity() );
 
                     rfCustomer.setAdapter(adapter);
                     rfCustomer.setLayoutManager(new LinearLayoutManager((MainActivity)getActivity()));
