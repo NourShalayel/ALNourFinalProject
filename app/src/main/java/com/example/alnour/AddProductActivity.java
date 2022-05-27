@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -19,6 +20,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -42,6 +44,8 @@ public class AddProductActivity extends AppCompatActivity {
     public static final int PICK_IMAGE = 1021;
 
     private TextInputEditText pro_name, pro_code, pro_price, pro_unit, pro_description;
+    TextView txtlogin;
+
     String cat_id, sup_id;
     ArrayList<String> cat_items = new ArrayList<>();
     ArrayList<String> sup_items = new ArrayList<>();
@@ -72,6 +76,9 @@ public class AddProductActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_product);
 
         init();
+        Typeface typeface = getResources().getFont(R.font.bungee);
+        txtlogin.setTypeface(typeface);
+
 
         addProductbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,6 +157,8 @@ public class AddProductActivity extends AppCompatActivity {
         sup_spinner = findViewById(R.id.selectSupplier);
         ivImage = findViewById(R.id.pro_image);
         selectImg_btn = findViewById(R.id.selectImg_btn);
+        txtlogin = findViewById(R.id.txtlogin);
+
     }
 
     private void addProductToBD() {

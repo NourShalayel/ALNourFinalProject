@@ -3,6 +3,7 @@ package com.example.alnour;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
@@ -29,6 +30,14 @@ public class SplachActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_splach);
 
+
+        image = findViewById(R.id.imageView);
+        logo = findViewById(R.id.textView);
+        slogan = findViewById(R.id.textView2);
+
+        Typeface typeface = getResources().getFont(R.font.bungee);
+        logo.setTypeface(typeface);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -38,9 +47,6 @@ public class SplachActivity extends AppCompatActivity {
             }
         }, 3000);
 
-        image = findViewById(R.id.imageView);
-        logo = findViewById(R.id.textView);
-        slogan = findViewById(R.id.textView2);
 
         topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
         bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);

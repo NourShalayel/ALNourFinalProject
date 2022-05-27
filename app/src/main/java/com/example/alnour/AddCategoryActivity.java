@@ -3,11 +3,13 @@ package com.example.alnour;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,6 +24,7 @@ public class AddCategoryActivity extends AppCompatActivity {
     private Button addCategory;
     private FirebaseDatabase db ;
     private DatabaseReference ref ;
+    TextView txtlogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,11 @@ public class AddCategoryActivity extends AppCompatActivity {
 
         cat_name = findViewById(R.id.cat_name);
         addCategory = findViewById(R.id.addCategory);
+        addCategory = findViewById(R.id.addCategory);
+        txtlogin = findViewById(R.id.txtlogin);
+
+        Typeface typeface = getResources().getFont(R.font.bungee);
+        txtlogin.setTypeface(typeface);
 
         addCategory.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,4 +81,5 @@ public class AddCategoryActivity extends AppCompatActivity {
             });
         }
     }
+
 }

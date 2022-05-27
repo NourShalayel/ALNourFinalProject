@@ -26,6 +26,10 @@
         <item name="fontFamily">@font/bungee</item>
     </style>
 
+    <style name= "RobotoTextViewStyle" parent= "android:Widget.TextView" >
+        <item name= "android:fontFamily" > sans-serif-light </item>
+    </style>
+
     <style name="Theme.AlNour.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.AlNour.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

@@ -28,6 +28,7 @@
                 android:src="@drawable/logoorange"/>
 
             <TextView
+                android:id="@+id/txtlogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Welcome Admin"
@@ -89,19 +90,8 @@
                 android:orientation="horizontal"
                 android:weightSum="2">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margin_short"
-                    android:layout_weight="1"
-                    android:text="Forgot password ??"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="14sp"
-                    android:id="@+id/forgot"
-                    android:textStyle="bold" />
-
                 <Button
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margin_short"
                     android:layout_weight="1"

@@ -31,9 +31,6 @@
             android:name=".ProductDesign"
             android:exported="false" />
         <activity
-            android:name=".AddInvoiceActivity"
-            android:exported="false" />
-        <activity
             android:name=".AddProductActivity"
             android:exported="false" />
         <activity

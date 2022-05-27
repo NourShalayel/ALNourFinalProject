@@ -3,11 +3,13 @@ package com.example.alnour;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,6 +24,7 @@ public class AddSupplierActivity extends AppCompatActivity {
     private Button addsupplierbtn;
     private FirebaseDatabase db ;
     private DatabaseReference ref ;
+    TextView txtlogin;
 
 
     @Override
@@ -34,6 +37,9 @@ public class AddSupplierActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_add_supplier);
         init();
+        Typeface typeface = getResources().getFont(R.font.bungee);
+        txtlogin.setTypeface(typeface);
+
 
         addsupplierbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +55,7 @@ public class AddSupplierActivity extends AppCompatActivity {
         sup_email = findViewById(R.id.sup_email);
         sup_address = findViewById(R.id.sup_address);
         addsupplierbtn = findViewById(R.id.addsupplier);
+        txtlogin = findViewById(R.id.txtlogin);
     }
 
 

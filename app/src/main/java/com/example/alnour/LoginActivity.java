@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -22,7 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity {
 
     private Button login;
-    private TextView forgot;
+    private TextView txtlogin;
     FirebaseAuth firAuth ;
 
     private TextInputEditText et_email, et_password;
@@ -41,6 +42,9 @@ public class LoginActivity extends AppCompatActivity {
 
         inti();
         lisner();
+
+        Typeface typeface = getResources().getFont(R.font.bungee);
+        txtlogin.setTypeface(typeface);
 
     }
 
@@ -79,18 +83,12 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        forgot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(LoginActivity.this, "Forgot", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     private void inti() {
         firAuth = FirebaseAuth.getInstance();
         login = findViewById(R.id.login);
-        forgot = findViewById(R.id.forgot);
+        txtlogin = findViewById(R.id.txtlogin);
         et_email = findViewById(R.id.email);
         et_password = findViewById(R.id.password);
     }
