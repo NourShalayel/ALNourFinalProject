@@ -39,7 +39,7 @@ public class DashBoardFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                customerFragment customerFrag = new customerFragment();
+                CustomerFragment customerFrag = new CustomerFragment();
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.addToBackStack(null);

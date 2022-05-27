@@ -8,6 +8,9 @@ public class Person {
     private String email;
     private String address;
 
+    public Person(){
+
+    }
     public Person(String id, String name, String call, String email, String address) {
         this.id = id;
         this.name = name;
@@ -54,5 +57,16 @@ public class Person {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", call='" + call + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }

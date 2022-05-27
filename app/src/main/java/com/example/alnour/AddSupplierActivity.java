@@ -17,6 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class AddSupplierActivity extends AppCompatActivity {
+
     private TextInputEditText sup_name, sup_phone, sup_email , sup_address;
     private Button addsupplierbtn;
     private FirebaseDatabase db ;
@@ -37,7 +38,7 @@ public class AddSupplierActivity extends AppCompatActivity {
         addsupplierbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addCustomerToBD();
+                addSupplierToBD();
             }
         });
     }
@@ -51,7 +52,7 @@ public class AddSupplierActivity extends AppCompatActivity {
     }
 
 
-    private void addCustomerToBD() {
+    private void addSupplierToBD() {
         String name = sup_name.getText().toString();
         String phone = sup_phone.getText().toString();
         String email = sup_email.getText().toString();
