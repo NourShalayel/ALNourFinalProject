@@ -91,7 +91,7 @@ public class ProductFragment extends Fragment {
                         Log.e("ee" , ""+pro_list);
                     }
 
-                    ProductAdapter adapter = new ProductAdapter(pro_list);
+                    ProductAdapter adapter = new ProductAdapter(pro_list , (MainActivity)getActivity());
 
                     rfProduct.setAdapter(adapter);
                     rfProduct.setLayoutManager(new LinearLayoutManager((MainActivity)getActivity()));

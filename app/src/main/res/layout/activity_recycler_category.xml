@@ -8,7 +8,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         android:outlineAmbientShadowColor="@color/colorAccent"
         android:outlineSpotShadowColor="@color/colorAccent"
         app:cardCornerRadius="40dp"
@@ -22,9 +22,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:background="@drawable/background_btn"
             >
 
@@ -37,7 +37,35 @@
                 android:text="Categoty"
                 android:textSize="25dp"
                 android:textColor="@color/black"
+                android:layout_gravity="center"
                 android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="120dp"
+                >
+
+                <ImageButton
+                    android:id="@+id/edit_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/pedit"
+                    android:backgroundTint="@color/tran"
+                    android:layout_marginEnd="30dp"/>
+
+                <ImageButton
+                    android:id="@+id/delete_btn"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/pdelete"
+                    android:backgroundTint="@color/tran"/>
+
+            </LinearLayout>
+
         </LinearLayout>
 
 

@@ -71,7 +71,7 @@
 
 
             <Button
-                android:id="@+id/updateCustomer"
+                android:id="@+id/updateCategoryrbtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_short"

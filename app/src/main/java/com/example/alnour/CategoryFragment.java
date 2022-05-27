@@ -78,7 +78,7 @@ public class CategoryFragment extends Fragment {
                         cat_list.add(cat);
                         Log.e("ee", "" + cat_list);
                     }
-                    CategoryAdapter adapter = new CategoryAdapter(cat_list);
+                    CategoryAdapter adapter = new CategoryAdapter(cat_list , (MainActivity)getActivity());
 
                     rfCategory.setAdapter(adapter);
                     rfCategory.setLayoutManager(new LinearLayoutManager((MainActivity)getActivity()));

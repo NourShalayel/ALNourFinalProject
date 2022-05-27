@@ -62,12 +62,12 @@ public class SupplierAdapter extends RecyclerView.Adapter<SupplierAdapter.Suppli
             public void onClick(View v) {
                 Intent intent = new Intent(context, UpdateSupplierActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("supplierId", supplierId);
-                bundle.putString("name", name);
-                bundle.putString("call", call);
-                bundle.putString("email", email);
-                bundle.putString("address", address);
-                intent.putExtra("bundleCus", bundle);
+                intent.putExtra("id", supplierId);
+                intent.putExtra("name" , name );
+                intent.putExtra("call" , call );
+                intent.putExtra("email" , email );
+                intent.putExtra("address" , address );
+
                 context.startActivity(intent);
 
             }

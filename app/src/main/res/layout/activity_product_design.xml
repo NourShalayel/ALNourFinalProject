@@ -54,7 +54,7 @@
 
 
             <LinearLayout
-                android:layout_width="240dp"
+                android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="3dp"
@@ -208,21 +208,23 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/edit_pro"
-                    android:layout_width="wrap_content"
+                <ImageButton
+                    android:id="@+id/edit_btn"
+                    android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
-                    android:src="@drawable/pedit" />
+                    android:src="@drawable/pedit"
+                    android:backgroundTint="@color/tran"/>
 
-                <ImageView
-                    android:id="@+id/delete_pro"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <ImageButton
+                    android:id="@+id/delete_btn"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:src="@drawable/pdelete" />
+                    android:src="@drawable/pdelete"
+                    android:backgroundTint="@color/tran"/>
 
             </LinearLayout>
 

@@ -124,7 +124,7 @@
                 android:background="@drawable/cornered_button"
                 android:text="Update Supplier"
                 android:textSize="18dp"
-                android:id="@+id/updatesupplier"
+                android:id="@+id/updatesupplierbtn"
 
                 android:textColor="@android:color/white" />
 
