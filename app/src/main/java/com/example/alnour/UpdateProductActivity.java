@@ -32,6 +32,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class UpdateProductActivity extends AppCompatActivity {
     private TextInputEditText pro_name, pro_code, pro_price, pro_unit, pro_description;
@@ -83,13 +84,13 @@ public class UpdateProductActivity extends AppCompatActivity {
             pro_price.setText(b.getString("price"));
             pro_unit.setText(b.getString("unit"));
             pro_description.setText(b.getString("description"));
-            cat_id =  b.getString("cat_id");
+            cat_id = b.getString("cat_id");
             sup_id = b.getString("sup_id");
             sup_name = b.getString("sup_name");
             cat_name = b.getString("cat_name");
-            imageUrl  =b.getString("image_product") ;
-            Log.e("eeee" , sup_name);
-            Log.e("eeee" , cat_name);
+            imageUrl = b.getString("image_product");
+            Log.e("eeee", sup_name);
+            Log.e("eeee", cat_name);
             Glide.with(getApplicationContext()).load(b.getString("image_product")).into(ivImage);
         } else {
             pro_name.setText("");
@@ -102,8 +103,8 @@ public class UpdateProductActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (inputValidation()) {
-                    addProductToBD();
-                        finish();
+                    UpdateProduct();
+                    finish();
 
                 }
             }
@@ -144,56 +145,6 @@ public class UpdateProductActivity extends AppCompatActivity {
         readSuppliers();
     }
 
-    private void addProductToBD() {
-
-        if (inputValidation()) {
-
-            db = FirebaseDatabase.getInstance();
-            ref = db.getReference("products");
-            String id = ref.push().getKey();
-
-            if (selectedImage != null) {
-                storage = FirebaseStorage.getInstance();
-                sref = storage.getReference("images/" + id);
-                sref.putFile(selectedImage).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            sref.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Uri> task) {
-
-                                    if (task.isSuccessful()) {
-                                        DatabaseReference refCus = FirebaseDatabase.getInstance().getReference("products").child(id);
-
-                                        String name = pro_name.getText().toString();
-                                        int code = Integer.parseInt(pro_code.getText().toString());
-                                        double price = Double.parseDouble(pro_price.getText().toString());
-                                        int unit = Integer.parseInt(pro_unit.getText().toString());
-                                        String description = pro_description.getText().toString();
-                                        String imageUr = task.getResult().toString();
-
-                                        Product pro = new Product(id, name, code, price, unit, description, cat_id, sup_id, imageUr);
-                                        refCus.setValue(pro);
-//                                        Toast.makeText(this, "Updated Successfully ", Toast.LENGTH_SHORT).show();
-
-
-
-                                    }
-                                }
-                            });
-                        } else {
-
-                        }
-
-                    }
-                });
-            } else {
-//                Toast.makeText(AddProductActivity.this, "please choice image", Toast.LENGTH_SHORT);
-            }
-        }
-    }
-
 
     public boolean UpdateProduct() {
         DatabaseReference refCus = FirebaseDatabase.getInstance().getReference("products").child(id);
@@ -204,11 +155,40 @@ public class UpdateProductActivity extends AppCompatActivity {
         int unit = Integer.parseInt(pro_unit.getText().toString());
         String description = pro_description.getText().toString();
 
-        Product pro = new Product(id, name, code, price, unit, description, cat_id, sup_id, imageUrl);
-        refCus.setValue(pro);
-        Toast.makeText(this, "Updated Successfully ", Toast.LENGTH_SHORT).show();
+
+        db = FirebaseDatabase.getInstance();
+        ref = db.getReference("products");
+        storage = FirebaseStorage.getInstance();
+        if (selectedImage != null) {
+            sref = storage.getReference("images/" + UUID.randomUUID().toString());
+            sref.putFile(selectedImage).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        sref.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Uri> task) {
+
+                                if (task.isSuccessful()) {
+                                    String imageUr = task.getResult().toString();
+
+                                    Product pro = new Product(id, name, code, price, unit, description, cat_id, sup_id, imageUr);
+                                    refCus.setValue(pro);
+
+//                                Toast.makeText(this, "Updated Successfully ", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        }else{
+            Product pro = new Product(id, name, code, price, unit, description, cat_id, sup_id, imageUrl);
+            refCus.setValue(pro);
+        }
 
         return true;
+
     }
 
     public void readCategories() {
@@ -267,9 +247,9 @@ public class UpdateProductActivity extends AppCompatActivity {
                         sup_adapter.notifyDataSetChanged();
                     }
 
-                    for(int i =0; i<sup_list.size() ; i++){
-                        Log.e("eeee" , sup_spinner.getItemAtPosition(i)+"");
-                        if (sup_spinner.getItemAtPosition(i).toString().equals(sup_name)){
+                    for (int i = 0; i < sup_list.size(); i++) {
+                        Log.e("eeee", sup_spinner.getItemAtPosition(i) + "");
+                        if (sup_spinner.getItemAtPosition(i).toString().equals(sup_name)) {
                             sup_spinner.setSelection(i);
                             break;
                         }
@@ -315,6 +295,7 @@ public class UpdateProductActivity extends AppCompatActivity {
         return null;
 
     }
+
 
     public Boolean inputValidation() {
         boolean flag = true;
