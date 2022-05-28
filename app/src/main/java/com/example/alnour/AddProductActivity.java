@@ -188,6 +188,8 @@ public class AddProductActivity extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         String imageUrl = task.getResult().toString();
                                         Product pro = new Product(id, name, code, price, unit, desc, cat_id, sup_id, imageUrl);
+                                        Toast.makeText(AddProductActivity.this, "add product successfully", Toast.LENGTH_SHORT).show();
+
                                         ref.child(id).setValue(pro).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {

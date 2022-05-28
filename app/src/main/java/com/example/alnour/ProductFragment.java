@@ -37,6 +37,8 @@ public class ProductFragment extends Fragment {
     RecyclerView rfProduct;
     ArrayList<Product> pro_list = new ArrayList<>() ;
     FloatingActionButton addProduct ;
+    ArrayList<Person> sup_list = new ArrayList<>();
+    ArrayList<Category> cat_list = new ArrayList<>();
 
     public ProductFragment() {
         // Required empty public constructor
@@ -69,6 +71,8 @@ public class ProductFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        readCategoryFromDB();
+        readSupplierFromDB();
         readProductFromDB();
     }
 
@@ -91,10 +95,62 @@ public class ProductFragment extends Fragment {
                         Log.e("ee" , ""+pro_list);
                     }
 
-                    ProductAdapter adapter = new ProductAdapter(pro_list , (MainActivity)getActivity());
+                    ProductAdapter adapter = new ProductAdapter(pro_list , sup_list , cat_list, (MainActivity)getActivity());
 
                     rfProduct.setAdapter(adapter);
                     rfProduct.setLayoutManager(new LinearLayoutManager((MainActivity)getActivity()));
+
+                } else {
+                    String errorMessage = task.getException().getMessage();
+                    Toast.makeText(getActivity(), "Error: " + errorMessage, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    public void readSupplierFromDB() {
+
+        sup_list.clear();
+
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference ref = db.getReference("suppliers");
+        Task<DataSnapshot> task = ref.get();
+        task.addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.isSuccessful()) {
+                    Iterable<DataSnapshot> data = task.getResult().getChildren();
+                    for (DataSnapshot snap : data) {
+                        Person sup = snap.getValue(Person.class);
+                        sup_list.add(sup);
+                        Log.e("ee", "" + sup_list);
+                    }
+
+                } else {
+                    String errorMessage = task.getException().getMessage();
+                    Toast.makeText(getContext(), "Error: " + errorMessage, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    public void readCategoryFromDB () {
+
+        cat_list.clear();
+
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference ref = db.getReference("categories");
+        Task<DataSnapshot> task = ref.get();
+        task.addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.isSuccessful()) {
+                    Iterable<DataSnapshot> data = task.getResult().getChildren();
+                    for (DataSnapshot snap : data) {
+                        Category cat = snap.getValue(Category.class);
+                        cat_list.add(cat);
+                        Log.e("ee", "" + cat_list);
+                    }
 
                 } else {
                     String errorMessage = task.getException().getMessage();

@@ -3,29 +3,39 @@ package com.example.alnour;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class ProductAdapter  extends RecyclerView.Adapter<ProductAdapter.ProductHolder> {
+public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductHolder> {
     ArrayList<Product> product_List;
     Context context;
+    ArrayList<Person> sup_list ;
+    ArrayList<Category> cat_list ;
 
-    public ProductAdapter(ArrayList<Product> product_List ,  Context context) {
+    public ProductAdapter(ArrayList<Product> product_List,ArrayList<Person> sup_list ,ArrayList<Category> cat_list ,  Context context) {
         this.product_List = product_List;
-        this.context = context ;
+        this.sup_list = sup_list;
+        this.cat_list = cat_list;
+        this.context = context;
     }
 
 
@@ -43,22 +53,31 @@ public class ProductAdapter  extends RecyclerView.Adapter<ProductAdapter.Product
 
         String productId = product_List.get(position).getId();
         String name = product_List.get(position).getName();
-        String code = product_List.get(position).getCode()+"";
-        String price = product_List.get(position).getPrice()+"";
-        String unit = product_List.get(position).getUnit()+"";
+        String code = product_List.get(position).getCode() + "";
+        String price = product_List.get(position).getPrice() + "";
+        String unit = product_List.get(position).getUnit() + "";
         String description = product_List.get(position).getDescription();
         String cat_id = product_List.get(position).getCat_id();
         String sup_id = product_List.get(position).getSup_id();
         String image_product = product_List.get(position).getProImg();
 
+        for (Person supp : sup_list){
+            if (supp.getId().equals(sup_id)){
+                holder.product_supplier.setText(supp.getName());
+            }
+        }
+
+        for (Category catt : cat_list){
+            if (catt.getId().equals(cat_id)){
+                holder.product_cat.setText(catt.getName());
+            }
+        }
 
         holder.product_name.setText(name);
         holder.product_code.setText(code);
         holder.product_price.setText(price);
         holder.product_unit.setText(unit);
         holder.product_desc.setText(description);
-        holder.product_cat.setText(cat_id);
-        holder.product_supplier.setText(sup_id);
 
         if (!product_List.get(position).getProImg().isEmpty()) {
             Glide.with(holder.itemView).load(image_product).into(holder.product_img);
@@ -78,14 +97,14 @@ public class ProductAdapter  extends RecyclerView.Adapter<ProductAdapter.Product
                 Intent intent = new Intent(context, UpdateProductActivity.class);
                 Bundle bundle = new Bundle();
                 intent.putExtra("id", productId);
-                intent.putExtra("name" , name );
-                intent.putExtra("code" , code );
-                intent.putExtra("price" , price );
-                intent.putExtra("unit" , unit );
-                intent.putExtra("description" , description );
-                intent.putExtra("cat_id" , cat_id );
-                intent.putExtra("sup_id" , sup_id );
-                intent.putExtra("image_product" , image_product );
+                intent.putExtra("name", name);
+                intent.putExtra("code", code);
+                intent.putExtra("price", price);
+                intent.putExtra("unit", unit);
+                intent.putExtra("description", description);
+                intent.putExtra("cat_id", cat_id);
+                intent.putExtra("sup_id", sup_id);
+                intent.putExtra("image_product", image_product);
 
                 context.startActivity(intent);
 
@@ -106,7 +125,7 @@ public class ProductAdapter  extends RecyclerView.Adapter<ProductAdapter.Product
     }
 
     public class ProductHolder extends RecyclerView.ViewHolder {
-        ImageView product_img ;
+        ImageView product_img;
         TextView product_name;
         TextView product_code;
         TextView product_price;
@@ -131,6 +150,10 @@ public class ProductAdapter  extends RecyclerView.Adapter<ProductAdapter.Product
             edit_btn = itemView.findViewById(R.id.edit_btn);
             delete_btn = itemView.findViewById(R.id.delete_btn);
         }
+
+
     }
+
+
 }
 
