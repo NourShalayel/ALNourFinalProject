@@ -218,13 +218,6 @@ public class AddProductActivity extends AppCompatActivity {
     }
 
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        //Read From DB
-//        readCategories();
-//        readSuppliers();
-//    }
 
     public void readCategories() {
 

@@ -1,11 +1,13 @@
 package com.example.alnour;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -17,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -24,6 +27,9 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
 
@@ -32,9 +38,16 @@ public class UpdateProductActivity extends AppCompatActivity {
     Intent intent;
     String id;
     String cat_id, sup_id;
+    String cat_name, sup_name;
     ArrayList<String> cat_items = new ArrayList<>();
     ArrayList<String> sup_items = new ArrayList<>();
 
+    private FirebaseDatabase db;
+    private DatabaseReference ref;
+    private StorageReference sref;
+    private FirebaseStorage storage;
+
+    public static final int PICK_IMAGE = 1021;
 
     ArrayList<Category> cat_list = new ArrayList<>();
     ArrayList<Person> sup_list = new ArrayList<>();
@@ -42,7 +55,8 @@ public class UpdateProductActivity extends AppCompatActivity {
     Spinner cat_spinner;
     Spinner sup_spinner;
     ImageView ivImage;
-    Uri selectedImage ;
+    Uri selectedImage;
+    String imageUrl;
     FloatingActionButton selectImg_btn;
 
     @Override
@@ -69,6 +83,14 @@ public class UpdateProductActivity extends AppCompatActivity {
             pro_price.setText(b.getString("price"));
             pro_unit.setText(b.getString("unit"));
             pro_description.setText(b.getString("description"));
+            cat_id =  b.getString("cat_id");
+            sup_id = b.getString("sup_id");
+            sup_name = b.getString("sup_name");
+            cat_name = b.getString("cat_name");
+            imageUrl  =b.getString("image_product") ;
+            Log.e("eeee" , sup_name);
+            Log.e("eeee" , cat_name);
+            Glide.with(getApplicationContext()).load(b.getString("image_product")).into(ivImage);
         } else {
             pro_name.setText("");
             pro_code.setText("");
@@ -80,10 +102,19 @@ public class UpdateProductActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (inputValidation()) {
-                    if (UpdateProduct()) {
+                    addProductToBD();
                         finish();
-                    }
+
                 }
+            }
+        });
+
+        selectImg_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+                getIntent().setType("image/*");
+                startActivityForResult(i, PICK_IMAGE);
             }
         });
 
@@ -98,7 +129,6 @@ public class UpdateProductActivity extends AppCompatActivity {
 
             }
         });
-
         sup_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = parent.getItemAtPosition(position).toString();
@@ -113,7 +143,59 @@ public class UpdateProductActivity extends AppCompatActivity {
         readCategories();
         readSuppliers();
     }
-    public boolean UpdateProduct(){
+
+    private void addProductToBD() {
+
+        if (inputValidation()) {
+
+            db = FirebaseDatabase.getInstance();
+            ref = db.getReference("products");
+            String id = ref.push().getKey();
+
+            if (selectedImage != null) {
+                storage = FirebaseStorage.getInstance();
+                sref = storage.getReference("images/" + id);
+                sref.putFile(selectedImage).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            sref.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Uri> task) {
+
+                                    if (task.isSuccessful()) {
+                                        DatabaseReference refCus = FirebaseDatabase.getInstance().getReference("products").child(id);
+
+                                        String name = pro_name.getText().toString();
+                                        int code = Integer.parseInt(pro_code.getText().toString());
+                                        double price = Double.parseDouble(pro_price.getText().toString());
+                                        int unit = Integer.parseInt(pro_unit.getText().toString());
+                                        String description = pro_description.getText().toString();
+                                        String imageUr = task.getResult().toString();
+
+                                        Product pro = new Product(id, name, code, price, unit, description, cat_id, sup_id, imageUr);
+                                        refCus.setValue(pro);
+//                                        Toast.makeText(this, "Updated Successfully ", Toast.LENGTH_SHORT).show();
+
+
+
+                                    }
+                                }
+                            });
+                        } else {
+
+                        }
+
+                    }
+                });
+            } else {
+//                Toast.makeText(AddProductActivity.this, "please choice image", Toast.LENGTH_SHORT);
+            }
+        }
+    }
+
+
+    public boolean UpdateProduct() {
         DatabaseReference refCus = FirebaseDatabase.getInstance().getReference("products").child(id);
 
         String name = pro_name.getText().toString();
@@ -121,13 +203,12 @@ public class UpdateProductActivity extends AppCompatActivity {
         double price = Double.parseDouble(pro_price.getText().toString());
         int unit = Integer.parseInt(pro_unit.getText().toString());
         String description = pro_description.getText().toString();
-        String imageUrl = "";
 
         Product pro = new Product(id, name, code, price, unit, description, cat_id, sup_id, imageUrl);
         refCus.setValue(pro);
-        Toast.makeText(this, "Updated Successfully " , Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Updated Successfully ", Toast.LENGTH_SHORT).show();
 
-        return  true ;
+        return true;
     }
 
     public void readCategories() {
@@ -142,7 +223,6 @@ public class UpdateProductActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (task.isSuccessful()) {
                     Iterable<DataSnapshot> data = task.getResult().getChildren();
-                    cat_items.add("Select Category");
                     for (DataSnapshot snap : data) {
                         Category cat = snap.getValue(Category.class);
                         cat_items.add(cat.getName());
@@ -173,17 +253,26 @@ public class UpdateProductActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (task.isSuccessful()) {
                     Iterable<DataSnapshot> data = task.getResult().getChildren();
-                    sup_items.add("Select Supplier");
                     for (DataSnapshot snap : data) {
                         Person sup = snap.getValue(Person.class);
                         sup_items.add(sup.getName());
+
                         sup_list.add(sup);
                         Log.d("d", "" + sup);
                     }
+
                     if (sup_items != null && sup_items.size() != 0) {
                         ArrayAdapter<String> sup_adapter = new ArrayAdapter<String>(getApplicationContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, sup_items);
                         sup_spinner.setAdapter(sup_adapter);
                         sup_adapter.notifyDataSetChanged();
+                    }
+
+                    for(int i =0; i<sup_list.size() ; i++){
+                        Log.e("eeee" , sup_spinner.getItemAtPosition(i)+"");
+                        if (sup_spinner.getItemAtPosition(i).toString().equals(sup_name)){
+                            sup_spinner.setSelection(i);
+                            break;
+                        }
                     }
 
                 } else {
@@ -193,6 +282,7 @@ public class UpdateProductActivity extends AppCompatActivity {
             }
         });
     }
+
     public void init() {
         pro_name = findViewById(R.id.pro_update_name);
         pro_code = findViewById(R.id.pro_update_code);
@@ -203,7 +293,7 @@ public class UpdateProductActivity extends AppCompatActivity {
         cat_spinner = findViewById(R.id.select_updateCategory);
         sup_spinner = findViewById(R.id.select_updateSupplier);
         ivImage = findViewById(R.id.pro_update_image);
-//        selectImg_btn = findViewById(R.id.pro_update_image);
+        selectImg_btn = findViewById(R.id.selectImg_btn);
 
     }
 
@@ -264,5 +354,15 @@ public class UpdateProductActivity extends AppCompatActivity {
             return false;
         }
         return flag;
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data != null) {
+            selectedImage = data.getData();
+            ivImage.setImageURI(selectedImage);
+        }
     }
 }

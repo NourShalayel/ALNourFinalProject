@@ -30,6 +30,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
     Context context;
     ArrayList<Person> sup_list ;
     ArrayList<Category> cat_list ;
+    String sup_name = "";
+    String cat_name = "";
 
     public ProductAdapter(ArrayList<Product> product_List,ArrayList<Person> sup_list ,ArrayList<Category> cat_list ,  Context context) {
         this.product_List = product_List;
@@ -59,17 +61,20 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
         String description = product_List.get(position).getDescription();
         String cat_id = product_List.get(position).getCat_id();
         String sup_id = product_List.get(position).getSup_id();
+
         String image_product = product_List.get(position).getProImg();
 
         for (Person supp : sup_list){
             if (supp.getId().equals(sup_id)){
                 holder.product_supplier.setText(supp.getName());
+                sup_name =supp.getName();
             }
         }
 
         for (Category catt : cat_list){
             if (catt.getId().equals(cat_id)){
                 holder.product_cat.setText(catt.getName());
+                cat_name = catt.getName();
             }
         }
 
@@ -104,6 +109,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
                 intent.putExtra("description", description);
                 intent.putExtra("cat_id", cat_id);
                 intent.putExtra("sup_id", sup_id);
+                intent.putExtra("sup_name", sup_name);
+                intent.putExtra("cat_name", cat_name);
                 intent.putExtra("image_product", image_product);
 
                 context.startActivity(intent);
