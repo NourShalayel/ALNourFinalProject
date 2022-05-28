@@ -31,7 +31,7 @@
                 android:id="@+id/txtlogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Welcome Admin"
+                android:text="@string/welcome_admin"
                 android:layout_marginTop="25dp"
                 android:textSize="35dp"
                 android:fontFamily="cursive"
@@ -96,7 +96,7 @@
                     android:layout_margin="@dimen/margin_short"
                     android:layout_weight="1"
                     android:background="@drawable/cornered_button"
-                    android:text="Login"
+                    android:text="@string/login"
                     android:id="@+id/login"
                     android:textColor="@android:color/white" />
 

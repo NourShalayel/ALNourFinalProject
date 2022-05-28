@@ -33,7 +33,7 @@
                 android:id="@+id/txtlogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Update Category"
+                android:text="@string/update_category"
                 android:layout_marginTop="25dp"
                 android:textSize="30dp"
                 android:fontFamily="cursive"
@@ -63,7 +63,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
-                    android:hint="Category Name"
+                    android:hint="@string/category_name"
                     android:inputType="text"
                     android:paddingBottom="16dp" />
 
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_short"
                 android:background="@drawable/cornered_button"
-                android:text="Update Category"
+                android:text="@string/update_category"
                 android:textColor="@android:color/white"
                 android:textSize="18dp" />
 

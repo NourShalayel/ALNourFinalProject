@@ -31,7 +31,7 @@
                 android:id="@+id/txtlogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add Customer"
+                android:text="@string/add_customer"
                 android:layout_marginTop="25dp"
                 android:textSize="35dp"
                 android:fontFamily="cursive"
@@ -61,7 +61,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Customer Name"
+                    android:hint="@string/customer_name"
                     android:id="@+id/cus_name"
                     android:inputType="text"
                     android:layout_marginBottom="20dp"/>
@@ -75,7 +75,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Customer Call"
+                    android:hint="@string/customer_call"
                     android:id="@+id/cus_phonenumber"
                     android:inputType="textEmailAddress"
                     android:layout_marginBottom="20dp"/>
@@ -89,7 +89,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Customer Email"
+                    android:hint="@string/customer_email"
                     android:id="@+id/email"
                     android:inputType="textEmailAddress"
                     android:layout_marginBottom="20dp"/>
@@ -103,7 +103,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Customer Address"
+                    android:hint="@string/customer_address"
                     android:id="@+id/cus_address"
                     android:inputType="textEmailAddress"
                     android:layout_marginBottom="20dp"/>
@@ -117,7 +117,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_short"
                 android:background="@drawable/cornered_button"
-                android:text="Add Customer"
+                android:text="@string/add_customer"
                 android:textSize="18dp"
                 android:id="@+id/addcustomer"
 

@@ -17,4 +17,57 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="add_category">Add Category</string>
+    <string name="category_name">Category Name</string>
+
+    <string name="add_customer">Add Customer</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="customer_call">Customer Call</string>
+    <string name="customer_email">Customer Email</string>
+    <string name="customer_address">Customer Address</string>
+
+    <string name="product_name">Product Name</string>
+    <string name="product_code">Product Code</string>
+    <string name="product_price">Product Price</string>
+    <string name="product_unit">Product Unit</string>
+    <string name="product_description">Product Description</string>
+    <string name="add_product">Add Product</string>
+    <string name="name">Name:</string>
+    <string name="code">Code:</string>
+    <string name="price">Price:</string>
+    <string name="unit">Unit:</string>
+    <string name="category">Category:</string>
+    <string name="supplier">Supplier:</string>
+    <string name="description">Description:</string>
+    <string name="add">Add</string>
+    <string name="welcome_admin">Welcome Admin</string>
+    <string name="login">Login</string>
+    <string name="call">Call:</string>
+    <string name="address">Address:</string>
+    <string name="categoty">📌 Categoty</string>
+    <string name="invoice">Invoice</string>
+    <string name="suppliertab">Supplier</string>
+    <string name="customer">Customer</string>
+    <string name="al_nour">Al Nour</string>
+    <string name="al_nour_sale_point">AL Nour Sale Point</string>
+    <string name="update_category">Update Category</string>
+    <string name="update_customer">Update Customer</string>
+
+    <string name="update_product">Update Product</string>
+    <string name="update_supplier">Update Supplier</string>
+
+    <string name="supplier_address">Supplier Address</string>
+    <string name="supplier_email">Supplier Email</string>
+    <string name="supplier_call">Supplier Call</string>
+    <string name="supplier_name">Supplier Name</string>
+    <string name="add_supplier">Add Supplier</string>
+    <string name="supplierdask">Supplier</string>
+    <string name="products">Products</string>
+    <string name="categorydash">Category</string>
+    <string name="report">Report</string>
+    <string name="total">Total :</string>
+    <string name="check_out">Check Out</string>
+
+
 </resources>

@@ -82,7 +82,6 @@ public class CategoryFragment extends Fragment {
 
                     rfCategory.setAdapter(adapter);
                     rfCategory.setLayoutManager(new LinearLayoutManager((MainActivity)getActivity()));
-                    Toast.makeText(getActivity(), "" + (MainActivity)getActivity() , Toast.LENGTH_SHORT).show();
 
 
                 } else {

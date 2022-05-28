@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Update Supplier"
+                android:text="@string/update_supplier"
                 android:layout_marginTop="25dp"
                 android:textSize="35dp"
                 android:fontFamily="cursive"
@@ -60,7 +60,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Supplier Name"
+                    android:hint="@string/supplier_name"
                     android:id="@+id/edit_name"
                     android:inputType="text"
                     android:layout_marginBottom="20dp"/>
@@ -74,7 +74,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Supplier Call"
+                    android:hint="@string/supplier_call"
                     android:id="@+id/edit_phonenumber"
                     android:inputType="number"
                     android:layout_marginBottom="20dp"/>
@@ -88,7 +88,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Supplier Email"
+                    android:hint="@string/supplier_email"
                     android:id="@+id/edit_email"
                     android:inputType="textEmailAddress"
                     android:layout_marginBottom="20dp"/>
@@ -102,7 +102,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Supplier Address"
+                    android:hint="@string/supplier_address"
                     android:id="@+id/edit_address"
                     android:inputType="text"
                     android:layout_marginBottom="20dp"/>
@@ -116,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_short"
                 android:background="@drawable/cornered_button"
-                android:text="Update Supplier"
+                android:text="@string/update_supplier"
                 android:textSize="18dp"
                 android:id="@+id/updatesupplier"
 

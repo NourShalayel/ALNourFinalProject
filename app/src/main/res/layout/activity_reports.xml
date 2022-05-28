@@ -24,7 +24,7 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="📌 Categoty"
+            android:text="@string/categoty"
             android:layout_weight="1"
 
             />
@@ -32,19 +32,19 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Customer"
+            android:text="@string/customer"
             android:layout_weight="1"
             />
         <com.google.android.material.tabs.TabItem
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Supplier"
+            android:text="@string/suppliertab"
             android:layout_weight="1"
             />
         <com.google.android.material.tabs.TabItem
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Invoice"
+            android:text="@string/invoice"
             android:layout_weight="1"
             />
     </com.google.android.material.tabs.TabLayout>

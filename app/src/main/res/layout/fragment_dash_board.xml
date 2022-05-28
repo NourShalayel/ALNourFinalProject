@@ -45,7 +45,7 @@
                         android:layout_below="@id/bus"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
-                        android:text="Customer"
+                        android:text="@string/customer"
                         android:textSize="15sp"
                         app:fontFamily="@font/bungee" />
 
@@ -78,7 +78,7 @@
                         android:layout_below="@id/imageView3"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
-                        android:text="Supplier"
+                        android:text="@string/supplierdask"
                         android:textSize="15sp"
                         app:fontFamily="@font/bungee" />
 
@@ -123,7 +123,7 @@
                         android:layout_below="@id/bus1"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
-                        android:text="Products"
+                        android:text="@string/products"
                         android:textSize="15sp"
                         app:fontFamily="@font/bungee" />
 
@@ -156,7 +156,7 @@
                         android:layout_below="@id/train"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
-                        android:text="Invoice"
+                        android:text="@string/invoice"
                         android:textSize="15sp"
                         app:fontFamily="@font/bungee" />
 
@@ -201,7 +201,7 @@
                         android:layout_below="@id/airplane"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
-                        android:text="Category"
+                        android:text="@string/categorydash"
                         android:textSize="15sp"
                         app:fontFamily="@font/bungee" />
 
@@ -234,7 +234,7 @@
                         android:layout_below="@id/cycle"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
-                        android:text="Report"
+                        android:text="@string/report"
                         android:textSize="15sp"
                         app:fontFamily="@font/bungee" />
 

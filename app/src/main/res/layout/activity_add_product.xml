@@ -68,7 +68,7 @@
                 android:layout_marginStart="10dp"
                 android:fontFamily="cursive"
                 android:gravity="center_vertical"
-                android:text="Add Product"
+                android:text="@string/add_product"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                 android:textColor="@android:color/white"
                 android:textSize="26dp"
@@ -94,7 +94,7 @@
                     android:id="@+id/pro_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Product Name"
+                    android:hint="@string/product_name"
                     android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -107,7 +107,7 @@
                     android:id="@+id/pro_code"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Product Code"
+                    android:hint="@string/product_code"
                     android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -120,7 +120,7 @@
                     android:id="@+id/pro_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Product Price"
+                    android:hint="@string/product_price"
                     android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -133,7 +133,7 @@
                     android:id="@+id/pro_unit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Product Unit"
+                    android:hint="@string/product_unit"
                     android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -147,7 +147,7 @@
                     android:id="@+id/pro_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Product Description"
+                    android:hint="@string/product_description"
                     android:inputType="textMultiLine"
                     android:lines="3"
                     android:scrollbars="vertical" />
@@ -187,7 +187,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_short"
                 android:background="@drawable/cornered_button"
-                android:text="Add Product"
+                android:text="@string/add_product"
                 android:textColor="@android:color/white"
                 android:textSize="18dp" />
 

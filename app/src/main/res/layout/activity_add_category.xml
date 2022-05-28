@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:fontFamily="cursive"
-                android:text="Add Category"
+                android:text="@string/add_category"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                 android:textColor="@android:color/white"
                 android:textSize="30dp"
@@ -62,7 +62,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
-                    android:hint="Category Name"
+                    android:hint="@string/category_name"
                     android:inputType="text"
                     android:paddingBottom="16dp" />
 
@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_short"
                 android:background="@drawable/cornered_button"
-                android:text="Add Category"
+                android:text="@string/add_category"
                 android:textColor="@android:color/white"
 
                 android:textSize="18dp" />

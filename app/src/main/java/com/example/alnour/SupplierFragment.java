@@ -80,7 +80,6 @@ public class SupplierFragment extends Fragment {
 
                         rfSupplier.setAdapter(adapter);
                         rfSupplier.setLayoutManager(new LinearLayoutManager((MainActivity) getActivity()));
-                        Toast.makeText(getActivity(), "" + (MainActivity) getActivity(), Toast.LENGTH_SHORT).show();
 
                     } else {
                         String errorMessage = task.getException().getMessage();

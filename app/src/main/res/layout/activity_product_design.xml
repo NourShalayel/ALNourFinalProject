@@ -14,6 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+
         android:outlineSpotShadowColor="@color/colorAccent"
         android:outlineAmbientShadowColor="@color/colorAccent"
 
@@ -25,12 +26,13 @@
             android:orientation="horizontal"
             android:padding="12dp"
             android:layout_margin="5dp"
-            android:layout_marginBottom="5dp">
+            android:layout_marginBottom="5dp"
+            android:gravity="center">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:layout_margin="10dp"
+                android:layout_marginEnd="7dp"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +56,7 @@
 
 
             <LinearLayout
-                android:layout_width="190dp"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="3dp"
@@ -69,7 +71,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Name: " />
+                        android:text="@string/name" />
 
                     <TextView
                         android:id="@+id/product_name"
@@ -88,7 +90,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Code: " />
+                        android:text="@string/code" />
 
                     <TextView
                         android:id="@+id/product_code"
@@ -108,7 +110,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Price: " />
+                        android:text="@string/price" />
 
                     <TextView
                         android:id="@+id/product_price"
@@ -128,7 +130,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Unit: " />
+                        android:text="@string/unit" />
 
                     <TextView
                         android:id="@+id/product_unit"
@@ -148,7 +150,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Category: " />
+                        android:text="@string/category" />
 
                     <TextView
                         android:id="@+id/product_cat"
@@ -168,7 +170,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Supplier: " />
+                        android:text="@string/supplier" />
 
                     <TextView
                         android:id="@+id/product_supplier"
@@ -188,7 +190,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Description: " />
+                        android:text="@string/description" />
 
                     <TextView
                         android:id="@+id/product_desc"

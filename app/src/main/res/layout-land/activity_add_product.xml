@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:fontFamily="cursive"
-                android:text="Add Product"
+                android:text="@string/add_product"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                 android:textColor="@android:color/white"
                 android:textSize="35dp"
@@ -91,7 +91,7 @@
                     android:id="@+id/pro_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Customer Name"
+                    android:hint="@string/customer_name"
                     android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -104,7 +104,7 @@
                     android:id="@+id/productCode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Product Code"
+                    android:hint="@string/product_code"
                     android:inputType="number" />
 
 
@@ -118,7 +118,7 @@
                     android:id="@+id/productPrice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Product Price"
+                    android:hint="@string/product_price"
                     android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -131,7 +131,7 @@
                     android:id="@+id/productUnit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Product Unit"
+                    android:hint="@string/product_unit"
                     android:inputType="number" />
 
 
@@ -145,7 +145,7 @@
                     android:id="@+id/productDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Product Description"
+                    android:hint="@string/product_description"
                     android:inputType="textMultiLine"
                     android:lines="3"
                     android:scrollbars="vertical" />
@@ -194,7 +194,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_short"
                 android:background="@drawable/cornered_button"
-                android:text="Add Product"
+                android:text="@string/add_product"
                 android:textColor="@android:color/white"
                 android:textSize="18dp" />
 

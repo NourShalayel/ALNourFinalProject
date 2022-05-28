@@ -48,7 +48,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Name: " />
+                        android:text="@string/name" />
 
                     <TextView
                         android:id="@+id/product_name"
@@ -67,7 +67,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Code: " />
+                        android:text="@string/code" />
 
                     <TextView
                         android:id="@+id/product_code"
@@ -87,7 +87,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Price: " />
+                        android:text="@string/price" />
 
                     <TextView
                         android:id="@+id/product_price"
@@ -106,8 +106,8 @@
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Unit: " />
+                        android:layout_height="match_parent"
+                        android:text="@string/unit" />
 
                     <TextView
                         android:id="@+id/product_unit"
@@ -127,7 +127,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Category: " />
+                        android:text="@string/category" />
 
                     <TextView
                         android:id="@+id/product_cat"
@@ -147,7 +147,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Supplier: " />
+                        android:text="@string/supplier" />
 
                     <TextView
                         android:id="@+id/product_supplier"
@@ -167,7 +167,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Description: " />
+                        android:text="@string/description" />
 
                     <TextView
                         android:id="@+id/product_desc"
@@ -186,7 +186,7 @@
                 android:layout_width="80dp"
                 android:layout_height="40dp"
                 android:backgroundTint="@color/colortrans"
-                android:text="Add"
+                android:text="@string/add"
                 android:layout_marginStart="10dp"
                 android:layout_gravity="center"
                 android:drawableLeft="@drawable/ic_baseline_add_24"

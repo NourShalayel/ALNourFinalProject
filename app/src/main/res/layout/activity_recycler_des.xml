@@ -16,10 +16,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="160dp"
             android:orientation="horizontal"
-            android:padding="12dp">
+         >
 
             <ImageView
                 android:id="@+id/book_img"
@@ -47,7 +48,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Name: " />
+                        android:text="@string/name" />
 
                     <TextView
                         android:id="@+id/per_name"
@@ -67,7 +68,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Call: " />
+                        android:text="@string/call" />
 
                     <TextView
                         android:id="@+id/per_phonenumber"
@@ -87,7 +88,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Email: " />
+                        android:text="@string/email" />
 
                     <TextView
                         android:id="@+id/per_email"
@@ -108,7 +109,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Address: " />
+                        android:text="@string/address" />
 
                     <TextView
                         android:id="@+id/per_address"

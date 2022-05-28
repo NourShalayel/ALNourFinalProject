@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">النور</string>
+    <string name="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="email">الإيميل</string>
+    <string name="password">كلمة السر</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="enter_name">ادخل الاسم</string>
+    <string name="enter_number">ادخل رقم الهاتف</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">التالي</string>
+    <string name="previous">السابق</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="add_category">أضف تصنيف</string>
+    <string name="category_name">اسم التصنيف</string>
+
+    <string name="add_customer">أضف عميل</string>
+    <string name="customer_name">اسم العميل</string>
+    <string name="customer_call">رقم هاتف العميل</string>
+    <string name="customer_email">ايميل العميل</string>
+    <string name="customer_address">عنوان العميل</string>
+
+    <string name="product_name">اسم المنتج</string>
+    <string name="product_code">كود المنتج</string>
+    <string name="product_price">سعر المنتج</string>
+    <string name="product_unit">كمية المنتج</string>
+    <string name="product_description">وصف المنتج</string>
+    <string name="add_product">أضف منتج</string>
+    <string name="name">الاسم :</string>
+    <string name="code">الكود :</string>
+    <string name="price">السعر :</string>
+    <string name="unit">الكمية :</string>
+    <string name="category">التصنيف :</string>
+    <string name="supplier">الموزع :</string>
+    <string name="description">الوصف :</string>
+    <string name="add">أضف</string>
+    <string name="welcome_admin">مرحباً</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="call">رقم الهاتف :</string>
+    <string name="address">العنوان :</string>
+    <string name="categoty">📌 التصنيفات </string>
+    <string name="invoice">الفواتير</string>
+    <string name="suppliertab">الموزعين</string>
+    <string name="customer">الزبائن</string>
+    <string name="al_nour">النور</string>
+    <string name="al_nour_sale_point">نقطة بيع النور</string>
+    <string name="update_category">تعديل بينات التصنيف</string>
+    <string name="update_customer">تعديل بينات الزبون</string>
+
+    <string name="update_product">تعديل بينات المنتج</string>
+    <string name="update_supplier">تعديل بينات الموزع</string>
+
+    <string name="supplier_address">عنوان الموزع</string>
+    <string name="supplier_email">ايميل الموزع</string>
+    <string name="supplier_call">رقم هاتف الموزع</string>
+    <string name="supplier_name">اسم الموزع</string>
+    <string name="add_supplier">أضف عميل</string>
+    <string name="supplierdask">العملاء</string>
+    <string name="products">المنتجات</string>
+    <string name="categorydash">التصنيفات</string>
+    <string name="report">تقاير</string>
+    <string name="total">الإجمالي :</string>
+    <string name="check_out">دفع</string>
+
+
+</resources>

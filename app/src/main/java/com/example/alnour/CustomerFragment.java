@@ -80,12 +80,12 @@ public class CustomerFragment extends Fragment {
                     CustomerAdapter adapter = new CustomerAdapter(cus_list , (MainActivity)getActivity() );
 
                     rfCustomer.setAdapter(adapter);
+                    rfCustomer.setAdapter(adapter);
                     rfCustomer.setLayoutManager(new LinearLayoutManager((MainActivity)getActivity()));
-//                    Toast.makeText(getActivity(), "" + (MainActivity)getActivity() , Toast.LENGTH_SHORT).show();
 
                 } else {
                     String errorMessage = task.getException().getMessage();
-//                    Toast.makeText(getActivity(), "Error: " + errorMessage, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Error: " + errorMessage, Toast.LENGTH_SHORT).show();
                 }
             }
         });
