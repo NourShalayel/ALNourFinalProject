@@ -60,7 +60,7 @@ public class InvoiceFragment extends Fragment {
 
                 invoiceProductFrag.setArguments(bundle);
 
-
+                ft.addToBackStack(null);
                 ft.replace(R.id.fcv, invoiceProductFrag);
                 ft.commit();
 
