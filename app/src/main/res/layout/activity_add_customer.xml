@@ -79,7 +79,7 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/customer_call"
                         android:id="@+id/cus_phonenumber"
-                        android:inputType="textEmailAddress"
+                        android:inputType="number"
                         android:paddingBottom="16dp"
                         android:layout_marginBottom="20dp"/>
 

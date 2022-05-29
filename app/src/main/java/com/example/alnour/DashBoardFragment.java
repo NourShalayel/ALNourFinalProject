@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +46,12 @@ public class DashBoardFragment extends Fragment {
                 ft.addToBackStack(null);
                 ft.replace(R.id.fcv, customerFrag);
                 ft.commit();
+//
+//                FileAllData file = new FileAllData();
+//                file.readProductFromDB();
+
+//                Log.e("file", "onCreate: "+ file.productFile);
+//                Log.e("file", "onCreate: "+ file.pro_list);
             }
         });
 

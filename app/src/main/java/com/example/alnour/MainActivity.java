@@ -21,6 +21,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,10 +31,20 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.ActionCodeSettings;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.google.gson.Gson;
 
 import java.net.CookieManager;
 import java.util.ArrayList;
@@ -45,12 +56,21 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore db;
     ArrayList<Category> cat_list = new ArrayList<>();
     String URLSAVE;
+    ArrayList<Product> pro_list = new ArrayList<>();
+    private StorageReference sref;
+    String productFile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         savebtn = findViewById(R.id.savebtn);
+
+//        FileAllData file = new FileAllData();
+//        file.readProductFromDB();
+//
+//        Log.e("file", "onCreate: "+ file.productFile);
+//        Log.e("file", "onCreate: "+ file.pro_list);
 
         savebtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +90,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -106,10 +130,12 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         for (DocumentSnapshot documentSnapshot : task.getResult()) {
                             URLSAVE = documentSnapshot.getString("categories");
+                            Log.e("eeeeee", "onComplete: "+ documentSnapshot);
                         }
 //                        downloadFile(URLSAVE);
                     }
                 })
+
 
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -124,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void downloadFile() {
 
-        Uri uri = Uri.parse("http://www.africau.edu/images/default/sample.pdf");
+        Uri uri = Uri.parse("https://firebasestorage.googleapis.com/v0/b/alnour-78dec.appspot.com/o/images%2F-N34gSP3ucYF69xl7rKE?alt=media&token=26f190a4-5bb9-4cbd-a5eb-f7964b0fa259");
         DownloadManager.Request request = new DownloadManager.Request(uri);
 
 //        request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
@@ -132,8 +158,11 @@ public class MainActivity extends AppCompatActivity {
 //        request.allowScanningByMediaScanner();
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "" + System.currentTimeMillis());
-        DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+        DownloadManager manager = (DownloadManager)getSystemService(Context.DOWNLOAD_SERVICE);
         manager.enqueue(request);
+
+
+
     }
 
     @Override

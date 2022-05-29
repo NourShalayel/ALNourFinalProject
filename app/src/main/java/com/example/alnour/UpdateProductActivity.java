@@ -21,15 +21,19 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -50,8 +54,11 @@ public class UpdateProductActivity extends AppCompatActivity {
 
     public static final int PICK_IMAGE = 1021;
 
-    ArrayList<Category> cat_list = new ArrayList<>();
+    ArrayList<Product> pro_list = new ArrayList<>();
     ArrayList<Person> sup_list = new ArrayList<>();
+    ArrayList<Category> cat_list = new ArrayList<>();
+    ArrayList<Person> cus_list = new ArrayList<>();
+    String productFile;
     Button updateProductbtn;
     Spinner cat_spinner;
     Spinner sup_spinner;
@@ -346,4 +353,6 @@ public class UpdateProductActivity extends AppCompatActivity {
             ivImage.setImageURI(selectedImage);
         }
     }
+
+
 }
