@@ -1,6 +1,9 @@
 package com.example.alnour;
 
-public class Product {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Product implements Parcelable {
 
     private String id;
     private String name;
@@ -28,6 +31,30 @@ public class Product {
         this.sup_id = sup_id;
         this.product_img = product_img;
     }
+
+    protected Product(Parcel in) {
+        id = in.readString();
+        name = in.readString();
+        code = in.readInt();
+        price = in.readDouble();
+        unit = in.readInt();
+        description = in.readString();
+        cat_id = in.readString();
+        sup_id = in.readString();
+        product_img = in.readString();
+    }
+
+    public static final Creator<Product> CREATOR = new Creator<Product>() {
+        @Override
+        public Product createFromParcel(Parcel in) {
+            return new Product(in);
+        }
+
+        @Override
+        public Product[] newArray(int size) {
+            return new Product[size];
+        }
+    };
 
     public String getId() {
         return id;
@@ -99,5 +126,23 @@ public class Product {
 
     public void setProImg(String product_img) {
         this.product_img = product_img;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(name);
+        dest.writeInt(code);
+        dest.writeDouble(price);
+        dest.writeInt(unit);
+        dest.writeString(description);
+        dest.writeString(cat_id);
+        dest.writeString(sup_id);
+        dest.writeString(product_img);
     }
 }

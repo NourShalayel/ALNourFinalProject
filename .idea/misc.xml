@@ -13,7 +13,7 @@
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_invoice.xml" value="0.14356884057971014" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_product.xml" value="0.25" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_supplier.xml" value="0.17300724637681159" />
-        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_invoice_design.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_invoice_design.xml" value="0.25" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_main.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_product_cartdes.xml" value="0.33" />
@@ -28,6 +28,8 @@
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_update_supplier.xml" value="0.17481884057971014" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/fragment_category.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/fragment_dash_board.xml" value="0.13722826086956522" />
+        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/fragment_invoice.xml" value="0.18614130434782608" />
+        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/fragment_invoice_product.xml" value="0.18614130434782608" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/fragment_pager_category.xml" value="0.25" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/fragment_pager_customer.xml" value="0.13722826086956522" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/fragment_pager_invoice.xml" value="0.13677536231884058" />
