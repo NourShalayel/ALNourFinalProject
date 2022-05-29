@@ -45,12 +45,10 @@ public class InvoiceProductFragment extends Fragment {
 
         }
 
-        InvoiceProductAdapter adapter = new InvoiceProductAdapter(array_pro , (MainActivity)getActivity());
+        InvoiceProductAdapter adapter = new InvoiceProductAdapter(array_pro , (MainActivity)getActivity() , InvoiceProductFragment.this);
 
         rfProductsCart.setAdapter(adapter);
         rfProductsCart.setLayoutManager(new LinearLayoutManager((MainActivity)getActivity()));
-
-        total.setText(adapter.total +"");
 
         return v;
 

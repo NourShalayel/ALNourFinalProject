@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -22,13 +24,15 @@ import java.util.ArrayList;
 
 public class InvoiceProductAdapter extends RecyclerView.Adapter<InvoiceProductAdapter.ProductHolder> {
     ArrayList<Product> product_List;
+    Invoice invoice;
     Context context;
-
+    InvoiceProductFragment ipv ;
     String cat_name = "";
     double total;
 
-    public InvoiceProductAdapter(ArrayList<Product> product_List,  Context context) {
+    public InvoiceProductAdapter(ArrayList<Product> product_List, Context context, InvoiceProductFragment ipv) {
         this.product_List = product_List;
+        this.ipv = ipv;
         this.context = context;
     }
 
@@ -38,6 +42,8 @@ public class InvoiceProductAdapter extends RecyclerView.Adapter<InvoiceProductAd
     public InvoiceProductAdapter.ProductHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View v = inflater.inflate(R.layout.activity_product_cartdes, parent, false);
+
+
         return new InvoiceProductAdapter.ProductHolder(v);
     }
 
@@ -63,28 +69,27 @@ public class InvoiceProductAdapter extends RecyclerView.Adapter<InvoiceProductAd
         if (!product_List.get(position).getProImg().isEmpty()) {
             Glide.with(holder.itemView).load(image_product).into(holder.product_img);
         }
+        UpdateTotal();
+        holder.decreasNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (product_List.get(i).getUnit() != 1) {
+                    product_List.get(i).setUnit(product_List.get(i).getUnit() - 1);
+                    holder.unit_product.setText(product_List.get(i).getUnit() + "");
+                    UpdateTotal();
 
-       holder.decreasNumber.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               if (product_List.get(i).getUnit() != 1) {
-                   product_List.get(i).setUnit(product_List.get(i).getUnit()-1);
-                   holder.unit_product.setText(product_List.get(i).getUnit() + "");
-                   notifyDataSetChanged();
-
-               }else{
-                   Toast.makeText(context , "Unit Can not be less than 1",Toast.LENGTH_SHORT).show();
-               }
-           }
-       });
+                } else {
+                    Toast.makeText(context, "Unit Can not be less than 1", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         holder.increasNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                product_List.get(i).setUnit(product_List.get(i).getUnit()+1);
+                product_List.get(i).setUnit(product_List.get(i).getUnit() + 1);
                 holder.unit_product.setText(product_List.get(i).getUnit() + "");
-                notifyDataSetChanged();
-
+                UpdateTotal();
             }
         });
 
@@ -96,9 +101,20 @@ public class InvoiceProductAdapter extends RecyclerView.Adapter<InvoiceProductAd
             }
         });
 
-//             total += unit * product_List.get(position).getPrice() ;
-        }
+        Log.e("tt", product_List.get(i).getUnit() * product_List.get(position).getPrice() + "");
+        total += product_List.get(i).getUnit() * product_List.get(position).getPrice();
+        Log.e("tt", total + "");
 
+    }
+
+    private void UpdateTotal() {
+        double sum = 0;
+        for(int i = 0 ; i< product_List.size() ; i++){
+            Log.e("tt", sum + "sum");
+            sum += product_List.get(i).getUnit() *  product_List.get(i).getPrice();
+        }
+        ipv.total.setText(sum+"") ;
+    }
 
     @Override
     public int getItemCount() {
@@ -111,9 +127,9 @@ public class InvoiceProductAdapter extends RecyclerView.Adapter<InvoiceProductAd
         TextView product_code;
         TextView product_price;
         TextView unit_product;
-        Button delete_product ;
+        Button delete_product;
         Button increasNumber;
-        Button decreasNumber ;
+        Button decreasNumber;
 
 
         public ProductHolder(@NonNull View itemView) {
@@ -132,7 +148,6 @@ public class InvoiceProductAdapter extends RecyclerView.Adapter<InvoiceProductAd
 
 
     }
-
 
 }
 

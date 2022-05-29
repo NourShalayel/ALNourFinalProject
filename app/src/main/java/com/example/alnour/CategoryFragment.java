@@ -16,11 +16,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
@@ -29,6 +33,7 @@ public class CategoryFragment extends Fragment {
     RecyclerView rfCategory;
     ArrayList<Category> cat_list = new ArrayList<>();
     FloatingActionButton addCategory;
+    FirebaseFirestore db;
 
 
     public CategoryFragment() {
@@ -75,13 +80,16 @@ public class CategoryFragment extends Fragment {
                     Iterable<DataSnapshot> data = task.getResult().getChildren();
                     for (DataSnapshot snap : data) {
                         Category cat = snap.getValue(Category.class);
+
                         cat_list.add(cat);
                         Log.e("ee", "" + cat_list);
                     }
+
                     CategoryAdapter adapter = new CategoryAdapter(cat_list , (MainActivity)getActivity());
 
                     rfCategory.setAdapter(adapter);
                     rfCategory.setLayoutManager(new LinearLayoutManager((MainActivity)getActivity()));
+//                    Toast.makeText(getActivity(), "" + (MainActivity)getActivity() , Toast.LENGTH_SHORT).show();
 
 
                 } else {
@@ -91,6 +99,7 @@ public class CategoryFragment extends Fragment {
             }
         });
     }
+
 
 
 }
