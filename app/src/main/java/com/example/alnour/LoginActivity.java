@@ -2,7 +2,11 @@ package com.example.alnour;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -19,6 +23,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Random;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -61,9 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
-                        Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
+                        liseners();
                         finish();
                     }else{
                         Toast.makeText(LoginActivity.this, "email or password wrong", Toast.LENGTH_SHORT).show();
@@ -91,5 +95,27 @@ public class LoginActivity extends AppCompatActivity {
         txtlogin = findViewById(R.id.txtlogin);
         et_email = findViewById(R.id.email);
         et_password = findViewById(R.id.password);
+    }
+
+    private void liseners() {
+
+        NotificationManager nm = getSystemService(NotificationManager.class);
+
+        NotificationChannel nc = new NotificationChannel("my_id", "nour", NotificationManager.IMPORTANCE_HIGH);
+
+        nm.createNotificationChannel(nc);
+        NotificationCompat.Builder nb = new NotificationCompat.Builder(getApplicationContext(), "my_id");
+        nb.setContentTitle("login");
+        nb.setContentText("admin login to app successfully");
+        nb.setSmallIcon(R.drawable.camera_image);
+
+        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+        PendingIntent pi = PendingIntent.getActivity(getApplicationContext(), 100, i, PendingIntent.FLAG_UPDATE_CURRENT);
+        nb.setContentIntent(pi);
+
+        nm.notify(new Random().nextInt(), nb.build());
+
+        startActivity(i);
+
     }
 }
