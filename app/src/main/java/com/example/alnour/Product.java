@@ -9,6 +9,7 @@ public class Product implements Parcelable {
     private String name;
     private int code;
     private double price;
+    private double wholesale;
     private int unit;
     private String description;
     private String cat_id;
@@ -16,15 +17,16 @@ public class Product implements Parcelable {
     private String product_img;
 
 
-    public Product(){
+    public Product() {
 
     }
 
-    public Product(String id, String name, int code, double price, int unit, String description, String cat_id, String sup_id, String product_img) {
+    public Product(String id, String name, int code, double price, double wholesale, int unit, String description, String cat_id, String sup_id, String product_img) {
         this.id = id;
         this.name = name;
         this.code = code;
         this.price = price;
+        this.wholesale = wholesale;
         this.unit = unit;
         this.description = description;
         this.cat_id = cat_id;
@@ -86,6 +88,14 @@ public class Product implements Parcelable {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public double getWholeSale() {
+        return wholesale;
+    }
+
+    public void setWholeSale(double wholesale) {
+        this.wholesale = wholesale;
     }
 
     public int getUnit() {

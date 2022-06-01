@@ -3,9 +3,13 @@ package com.example.alnour;
 import java.util.ArrayList;
 
 public class Invoice {
-    private String customerName ;
+    private String customerName;
     private double total;
-    ArrayList<Product> product_invoice ;
+    ArrayList<Product> product_invoice;
+
+    public Invoice() {
+
+    }
 
     public Invoice(String customerName, double total, ArrayList<Product> product_invoice) {
         this.customerName = customerName;
@@ -36,7 +40,6 @@ public class Invoice {
     public void setProduct_invoice(ArrayList<Product> product_invoice) {
         this.product_invoice = product_invoice;
     }
-
 
 
 }

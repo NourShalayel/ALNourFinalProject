@@ -1,5 +1,7 @@
 package com.example.alnour;
 
+import static android.os.Environment.DIRECTORY_DOWNLOADS;
+
 import android.app.DownloadManager;
 import android.content.Context;
 import android.net.Uri;
@@ -14,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.content.pm.PackageManager;
 
@@ -33,54 +36,69 @@ import java.util.ArrayList;
 
 
 public class PagerCategoryFragment extends Fragment {
+
     private FirebaseDatabase db;
     private DatabaseReference ref;
     private StorageReference sref;
+    private StorageReference refStorage;
     private FirebaseStorage storage;
     final Context c = getContext();
-
+TextView countCategory ;
     ArrayList<Category> cat_list = new ArrayList<>();
-    String productFile;
+    String categoryFile;
 
     Button downloadCat_btn;
+
     public PagerCategoryFragment() {
         // Required empty public constructor
     }
 
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v =  inflater.inflate(R.layout.fragment_pager_category, container, false);
+        View v = inflater.inflate(R.layout.fragment_pager_category, container, false);
         downloadCat_btn = v.findViewById(R.id.downloadCat_btn);
-
+        countCategory = v.findViewById(R.id.countCategory);
+        readCategoryFromDB();
         downloadCat_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                readCategoryFromDB();
-
-                DownloadFile();
+                download();
             }
         });
-        return  v ;
+        return v;
 
     }
 
-    public void DownloadFile(){
+    public void download() {
+        sref = storage.getInstance().getReference();
+        refStorage = sref.child("history/category.txt");
+
+        refStorage.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
 
 
-//        Log.e("uri", "DownloadFile: " + sref.child("Document/file.txt").getDownloadUrl().toString() );
-        Uri uri = Uri.parse("https://console.firebase.google.com/u/0/project/alnour-78dec/storage/alnour-78dec.appspot.com/files/~2FDocument/file.txt");
+            @Override
+            public void onSuccess(Uri uri) {
+
+                String url = uri.toString();
+                downloadFile(getContext(), "category", ".txt", DIRECTORY_DOWNLOADS, url);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+            }
+        });
+    }
+
+    public void downloadFile(Context context, String fileName, String fileEx, String Directory, String url) {
+        DownloadManager manager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+        Uri uri = Uri.parse(url);
         DownloadManager.Request request = new DownloadManager.Request(uri);
-
-        request.setTitle("Download ....");
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "" + System.currentTimeMillis());
-        DownloadManager manager = (DownloadManager)getContext().getSystemService(Context.DOWNLOAD_SERVICE);
+        request.setDestinationInExternalFilesDir(context, Directory, fileName + fileEx);
         manager.enqueue(request);
-
 
     }
 
@@ -89,7 +107,7 @@ public class PagerCategoryFragment extends Fragment {
         cat_list.clear();
 
         FirebaseDatabase db = FirebaseDatabase.getInstance();
-        DatabaseReference ref = db.getReference("products");
+        DatabaseReference ref = db.getReference("categories");
         Task<DataSnapshot> task = ref.get();
         task.addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
@@ -98,26 +116,26 @@ public class PagerCategoryFragment extends Fragment {
                     Iterable<DataSnapshot> data = task.getResult().getChildren();
 
                     for (DataSnapshot snap : data) {
-                        Category pro = snap.getValue(Category.class);
-                        cat_list.add(pro);
+                        Category cat = snap.getValue(Category.class);
+                        cat_list.add(cat);
                         Log.e("ee", "" + cat_list);
                     }
+                    countCategory.setText(cat_list.size()+"");
 
-                    productFile = new Gson().toJson(cat_list);
-                    sref = FirebaseStorage.getInstance().getReference().child("Document");
-                    sref.child("file.txt").putBytes(productFile.toString().getBytes()).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    categoryFile = new Gson().toJson(cat_list);
+                    sref = FirebaseStorage.getInstance().getReference().child("history");
+                    sref.child("category.txt").putBytes(categoryFile.toString().getBytes()).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                            Toast.makeText(getContext() , "Success" ,Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(getContext() , "Failed" ,Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Failed", Toast.LENGTH_SHORT).show();
                             String errorMessage = task.getException().getMessage();
-                            Log.e("error", "onFailure: "+ errorMessage );
-
+                            Log.e("error", "onFailure: " + errorMessage);
                         }
                     });
                 } else {
@@ -126,8 +144,6 @@ public class PagerCategoryFragment extends Fragment {
                 }
             }
         });
-
-
 
 
     }

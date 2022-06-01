@@ -46,7 +46,7 @@ public class UpdateProductActivity extends AppCompatActivity {
     String cat_name, sup_name;
     ArrayList<String> cat_items = new ArrayList<>();
     ArrayList<String> sup_items = new ArrayList<>();
-
+Double wholesale ;
     private FirebaseDatabase db;
     private DatabaseReference ref;
     private StorageReference sref;
@@ -89,6 +89,7 @@ public class UpdateProductActivity extends AppCompatActivity {
             pro_name.setText(b.getString("name"));
             pro_code.setText(b.getString("code"));
             pro_price.setText(b.getString("price"));
+            wholesale = Double.parseDouble(b.getString("wholesale"));
             pro_unit.setText(b.getString("unit"));
             pro_description.setText(b.getString("description"));
             cat_id = b.getString("cat_id");
@@ -179,7 +180,7 @@ public class UpdateProductActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     String imageUr = task.getResult().toString();
 
-                                    Product pro = new Product(id, name, code, price, unit, description, cat_id, sup_id, imageUr);
+                                    Product pro = new Product(id, name, code, price, wholesale, unit, description, cat_id, sup_id, imageUr);
                                     refCus.setValue(pro);
 
 //                                Toast.makeText(this, "Updated Successfully ", Toast.LENGTH_SHORT).show();
@@ -189,8 +190,8 @@ public class UpdateProductActivity extends AppCompatActivity {
                     }
                 }
             });
-        }else{
-            Product pro = new Product(id, name, code, price, unit, description, cat_id, sup_id, imageUrl);
+        } else {
+            Product pro = new Product(id, name, code, price, wholesale, unit, description, cat_id, sup_id, imageUrl);
             refCus.setValue(pro);
         }
 

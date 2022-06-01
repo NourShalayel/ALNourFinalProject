@@ -57,6 +57,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
         String name = product_List.get(position).getName();
         String code = product_List.get(position).getCode() + "";
         String price = product_List.get(position).getPrice() + "";
+        String wholesale = product_List.get(position).getWholeSale() + "";
         String unit = product_List.get(position).getUnit() + "";
         String description = product_List.get(position).getDescription();
         String cat_id = product_List.get(position).getCat_id();
@@ -105,6 +106,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
                 intent.putExtra("name", name);
                 intent.putExtra("code", code);
                 intent.putExtra("price", price);
+                intent.putExtra("wholesale", wholesale);
                 intent.putExtra("unit", unit);
                 intent.putExtra("description", description);
                 intent.putExtra("cat_id", cat_id);
@@ -124,7 +126,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
         DatabaseReference ref_cus = FirebaseDatabase.getInstance().getReference("products").child(productId);
         ref_cus.removeValue();
     }
-
 
     @Override
     public int getItemCount() {

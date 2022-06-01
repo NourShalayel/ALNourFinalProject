@@ -30,6 +30,7 @@ public class DashBoardFragment extends Fragment {
         View invoice = v.findViewById(R.id.invoice_btn);
         View report = v.findViewById(R.id.reportbtn);
         View category = v.findViewById(R.id.category_btn);
+        View discount = v.findViewById(R.id.discount_btn);
 
         DashBoardFragment dashFraq = new DashBoardFragment();
 
@@ -112,6 +113,20 @@ public class DashBoardFragment extends Fragment {
                 ft.addToBackStack(null);
 
                 ft.replace(R.id.fcv, categoryFrag);
+                ft.commit();
+            }
+        });
+
+        discount.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                DiscountFragment discountFrag = new DiscountFragment();
+                FragmentManager fm = getActivity().getSupportFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.addToBackStack(null);
+
+                ft.replace(R.id.fcv, discountFrag);
                 ft.commit();
             }
         });

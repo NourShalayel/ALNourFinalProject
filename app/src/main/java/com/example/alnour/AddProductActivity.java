@@ -43,7 +43,7 @@ public class AddProductActivity extends AppCompatActivity {
 
     public static final int PICK_IMAGE = 1021;
 
-    private TextInputEditText pro_name, pro_code, pro_price, pro_unit, pro_description;
+    private TextInputEditText pro_name, pro_code, pro_price, pro_wholesale,pro_unit, pro_description;
     TextView txtlogin;
 
     String cat_id, sup_id;
@@ -150,6 +150,7 @@ public class AddProductActivity extends AppCompatActivity {
         pro_name = findViewById(R.id.pro_name);
         pro_code = findViewById(R.id.pro_code);
         pro_price = findViewById(R.id.pro_price);
+        pro_wholesale = findViewById(R.id.pro_wholesale);
         pro_unit = findViewById(R.id.pro_unit);
         pro_description = findViewById(R.id.pro_description);
         addProductbtn = findViewById(R.id.addProductbtn);
@@ -168,6 +169,7 @@ public class AddProductActivity extends AppCompatActivity {
             String name = pro_name.getText().toString();
             int code = Integer.parseInt(pro_code.getText().toString());
             double price = Double.parseDouble(pro_price.getText().toString());
+            double wholesale = Double.parseDouble(pro_wholesale.getText().toString());
             int unit = Integer.parseInt(pro_unit.getText().toString());
             String desc = pro_description.getText().toString();
 
@@ -187,7 +189,8 @@ public class AddProductActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Uri> task) {
                                     if (task.isSuccessful()) {
                                         String imageUrl = task.getResult().toString();
-                                        Product pro = new Product(id, name, code, price, unit, desc, cat_id, sup_id, imageUrl);
+                                        Product pro = new Product(id, name, code, price, wholesale, unit, desc, cat_id, sup_id, imageUrl);
+
                                         Toast.makeText(AddProductActivity.this, "add product successfully", Toast.LENGTH_SHORT).show();
 
                                         ref.child(id).setValue(pro).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -216,8 +219,6 @@ public class AddProductActivity extends AppCompatActivity {
             }
         }
     }
-
-
 
     public void readCategories() {
 
@@ -309,6 +310,11 @@ public class AddProductActivity extends AppCompatActivity {
             pro_price.setError("Can't be Empty");
             return false;
         }
+        if (pro_wholesale.getText().toString().isEmpty()) {
+            pro_wholesale.setError("Can't be Empty");
+            return false;
+        }
+
 
         if (pro_unit.getText().toString().isEmpty()) {
             pro_unit.setError("Can't be Empty");

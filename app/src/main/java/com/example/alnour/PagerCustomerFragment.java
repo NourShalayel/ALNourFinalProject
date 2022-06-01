@@ -1,64 +1,150 @@
 package com.example.alnour;
 
+import static android.os.Environment.DIRECTORY_DOWNLOADS;
+
+import android.app.DownloadManager;
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link PagerCustomerFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+
+
 public class PagerCustomerFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private FirebaseDatabase db;
+    private DatabaseReference ref;
+    private StorageReference sref;
+    private StorageReference refStorage;
+    private FirebaseStorage storage;
+    final Context c = getContext();
+    TextView countCustomer;
+    ArrayList<Person> cus_list = new ArrayList<>();
+    String customerFile;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    Button downloadCus_btn;
+
 
     public PagerCustomerFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PagerCustomerFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static PagerCustomerFragment newInstance(String param1, String param2) {
-        PagerCustomerFragment fragment = new PagerCustomerFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pager_customer, container, false);
+        View v = inflater.inflate(R.layout.fragment_pager_customer, container, false);
+        downloadCus_btn = v.findViewById(R.id.downloadCus_btn);
+        countCustomer = v.findViewById(R.id.countCustomer);
+        readCustomerFromDB();
+        downloadCus_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                download();
+            }
+        });
+        return v;
     }
+
+    public void download() {
+        sref = storage.getInstance().getReference();
+        refStorage = sref.child("history/customer.txt");
+
+        refStorage.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+
+
+            @Override
+            public void onSuccess(Uri uri) {
+
+                String url = uri.toString();
+                downloadFile(getContext(), "customer", ".txt", DIRECTORY_DOWNLOADS, url);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+            }
+        });
+    }
+
+    public void downloadFile(Context context, String fileName, String fileEx, String Directory, String url) {
+        DownloadManager manager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+        Uri uri = Uri.parse(url);
+        DownloadManager.Request request = new DownloadManager.Request(uri);
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        request.setDestinationInExternalFilesDir(context, Directory, fileName + fileEx);
+        manager.enqueue(request);
+
+    }
+
+    public void readCustomerFromDB() {
+
+        cus_list.clear();
+
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference ref = db.getReference("customers");
+        Task<DataSnapshot> task = ref.get();
+        task.addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.isSuccessful()) {
+                    Iterable<DataSnapshot> data = task.getResult().getChildren();
+
+                    for (DataSnapshot snap : data) {
+                        Person cus = snap.getValue(Person.class);
+                        cus_list.add(cus);
+                        Log.e("ee", "" + cus_list);
+                    }
+                    countCustomer.setText(cus_list.size() + "");
+
+                    customerFile = new Gson().toJson(cus_list);
+                    sref = FirebaseStorage.getInstance().getReference().child("history");
+                    sref.child("customer.txt").putBytes(customerFile.toString().getBytes()).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                            Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getContext(), "Failed", Toast.LENGTH_SHORT).show();
+                            String errorMessage = task.getException().getMessage();
+                            Log.e("error", "onFailure: " + errorMessage);
+                        }
+                    });
+                } else {
+                    String errorMessage = task.getException().getMessage();
+//                    Toast.makeText(getActivity(), "Error: " + errorMessage, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
+    }
+
 }
