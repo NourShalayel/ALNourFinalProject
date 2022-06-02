@@ -44,7 +44,7 @@ public class PagerCategoryFragment extends Fragment {
     private StorageReference refStorage;
     private FirebaseStorage storage;
     final Context c = getContext();
-TextView countCategory ;
+    TextView countCategory;
     ArrayList<Category> cat_list = new ArrayList<>();
     String categoryFile;
 
@@ -77,10 +77,8 @@ TextView countCategory ;
         refStorage = sref.child("history/category.txt");
 
         refStorage.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-
-
             @Override
-            public void onSuccess(Uri uri) {
+            public void onSuccess (Uri uri){
 
                 String url = uri.toString();
                 downloadFile(getContext(), "category", ".txt", DIRECTORY_DOWNLOADS, url);
@@ -121,7 +119,7 @@ TextView countCategory ;
                         cat_list.add(cat);
                         Log.e("ee", "" + cat_list);
                     }
-                    countCategory.setText(cat_list.size()+"");
+                    countCategory.setText(cat_list.size() + "");
                     Gson gson = new GsonBuilder().setPrettyPrinting().create();
                     categoryFile = gson.toJson(cat_list);
                     sref = FirebaseStorage.getInstance().getReference().child("history");
@@ -129,7 +127,7 @@ TextView countCategory ;
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                            Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override

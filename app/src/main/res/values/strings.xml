@@ -69,6 +69,7 @@
     <string name="total">Total :</string>
     <string name="check_out">Check Out</string>
     <string name="wholesale_price">wholesale price</string>
+    <string name="discount">Discount</string>
 
 
 </resources>

@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlNour">
         <activity
+            android:name=".RecyclerDiscountActivity"
+            android:exported="false" />
+        <activity
             android:name=".UpdateProductActivity"
             android:exported="false" />
         <activity
@@ -51,11 +54,9 @@
         <activity
             android:name=".AddCustomerActivity"
             android:exported="false" />
-
         <activity
             android:name=".AddDiscountActivity"
             android:exported="false" />
-
         <activity
             android:name=".RecyclerActivityDes"
             android:exported="true" />
@@ -73,7 +74,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>
