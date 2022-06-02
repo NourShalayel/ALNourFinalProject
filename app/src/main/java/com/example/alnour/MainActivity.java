@@ -51,44 +51,11 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    private static final int PERMISION_STORAGE_CODE = 1000;
-    Button savebtn;
-    FirebaseFirestore db;
-    ArrayList<Category> cat_list = new ArrayList<>();
-    String URLSAVE;
-    ArrayList<Product> pro_list = new ArrayList<>();
-    private StorageReference sref;
-    String productFile;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        savebtn = findViewById(R.id.savebtn);
 
-//        FileAllData file = new FileAllData();
-//        file.readProductFromDB();
-//
-//        Log.e("file", "onCreate: "+ file.productFile);
-//        Log.e("file", "onCreate: "+ file.pro_list);
-
-        savebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                downloadFile();
-//                if (Build.VERSION.SDK_INT >=Build.VERSION_CODES.M){
-//                    if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)==
-//                            PackageManager.PERMISSION_DENIED){
-//                        String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
-//                        requestPermissions(permissions , PERMISION_STORAGE_CODE);
-//                    }else{
-//                        downloadFile();
-//                    }
-//                }else{
-//                    downloadFile();
-//                }
-            }
-        });
 
 
 
@@ -116,69 +83,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onCreateOptionsMenu(menu);
     }
-
-    private void dataFromFirebase() {
-        if (cat_list.size() > 0)
-            cat_list.clear();
-
-        db = FirebaseFirestore.getInstance();
-
-        db.collection("categories")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        for (DocumentSnapshot documentSnapshot : task.getResult()) {
-                            URLSAVE = documentSnapshot.getString("categories");
-                            Log.e("eeeeee", "onComplete: "+ documentSnapshot);
-                        }
-//                        downloadFile(URLSAVE);
-                    }
-                })
-
-
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(), "Error ;-.-;", Toast.LENGTH_SHORT).show();
-                    }
-                })
-        ;
-
-
-    }
-
-    public void downloadFile() {
-
-        Uri uri = Uri.parse("https://firebasestorage.googleapis.com/v0/b/alnour-78dec.appspot.com/o/images%2F-N34gSP3ucYF69xl7rKE?alt=media&token=26f190a4-5bb9-4cbd-a5eb-f7964b0fa259");
-        DownloadManager.Request request = new DownloadManager.Request(uri);
-
-//        request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-        request.setTitle("Download ....");
-//        request.allowScanningByMediaScanner();
-        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "" + System.currentTimeMillis());
-        DownloadManager manager = (DownloadManager)getSystemService(Context.DOWNLOAD_SERVICE);
-        manager.enqueue(request);
-
-
-
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case PERMISION_STORAGE_CODE: {
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    downloadFile();
-                } else {
-                    Toast.makeText(this, " permission denai", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }
-    }
-
 
 
 }
