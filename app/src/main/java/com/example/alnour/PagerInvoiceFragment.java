@@ -34,6 +34,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
 
@@ -100,9 +101,9 @@ public class PagerInvoiceFragment extends Fragment {
                     for (DataSnapshot snap : data) {
                         Invoice inv = snap.getValue(Invoice.class);
                         total_price += inv.getTotal();
-                        counter ++;
+                        counter++;
                     }
-                    countInvoice.setText(counter+"");
+                    countInvoice.setText(counter + "");
                     total_wholesale = 0;
 
                     FirebaseDatabase db = FirebaseDatabase.getInstance();
@@ -124,7 +125,7 @@ public class PagerInvoiceFragment extends Fragment {
                         }
                     });
 
-                    profit = total_price -total_wholesale ;
+                    profit = total_price - total_wholesale;
                     if (profit > 0) {
                         TotalProfit.setTextColor(Color.GREEN);
                     } else {
@@ -189,8 +190,9 @@ public class PagerInvoiceFragment extends Fragment {
                         inv_list.add(inv);
                         Log.e("ee", "" + inv_list);
                     }
+                    Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-                    invoiceFile = new Gson().toJson(inv_list);
+                    invoiceFile = gson.toJson(inv_list);
                     sref = FirebaseStorage.getInstance().getReference().child("history");
                     sref.child("invoice.txt").putBytes(invoiceFile.toString().getBytes()).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override

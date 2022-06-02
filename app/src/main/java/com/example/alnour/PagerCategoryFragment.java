@@ -31,6 +31,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
 
@@ -121,8 +122,8 @@ TextView countCategory ;
                         Log.e("ee", "" + cat_list);
                     }
                     countCategory.setText(cat_list.size()+"");
-
-                    categoryFile = new Gson().toJson(cat_list);
+                    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                    categoryFile = gson.toJson(cat_list);
                     sref = FirebaseStorage.getInstance().getReference().child("history");
                     sref.child("category.txt").putBytes(categoryFile.toString().getBytes()).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override

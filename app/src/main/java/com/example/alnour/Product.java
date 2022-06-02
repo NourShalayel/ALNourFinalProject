@@ -155,4 +155,20 @@ public class Product implements Parcelable {
         dest.writeString(sup_id);
         dest.writeString(product_img);
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", code=" + code +
+                ", price=" + price +
+                ", wholesale=" + wholesale +
+                ", unit=" + unit +
+                ", description='" + description + '\'' +
+                ", cat_id='" + cat_id + '\'' +
+                ", sup_id='" + sup_id + '\'' +
+                ", product_img='" + product_img + '\'' +
+                '}';
+    }
 }

@@ -29,6 +29,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
 
@@ -116,8 +117,8 @@ public class PagerSupplierFragment extends Fragment {
                         Log.e("ee", "" + sup_list);
                     }
                     countSupplier.setText(sup_list.size() + "");
-
-                    supplierFile = new Gson().toJson(sup_list);
+                    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                    supplierFile = gson.toJson(sup_list);
                     sref = FirebaseStorage.getInstance().getReference().child("history");
                     sref.child("supplier.txt").putBytes(supplierFile.toString().getBytes()).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override

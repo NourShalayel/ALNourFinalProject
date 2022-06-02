@@ -41,5 +41,12 @@ public class Invoice {
         this.product_invoice = product_invoice;
     }
 
-
+    @Override
+    public String toString() {
+        return "Invoice{" +
+                "customerName='" + customerName + '\'' +
+                ", total=" + total + '\'' +
+                ", product_invoice=" + product_invoice + '\'' +
+                '}';
+    }
 }
