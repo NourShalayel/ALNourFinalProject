@@ -82,11 +82,11 @@
 
                     <ImageView
                         android:id="@+id/imageView3"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
-                        app:srcCompat="@drawable/supplier" />
+                        app:srcCompat="@drawable/suppliers" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
@@ -118,7 +118,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
-                        app:srcCompat="@drawable/product" />
+                        app:srcCompat="@drawable/products" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
