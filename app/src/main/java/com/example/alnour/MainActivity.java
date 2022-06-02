@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        savebtn = findViewById(R.id.savebtn);
+
 
 //        FileAllData file = new FileAllData();
 //        file.readProductFromDB();
@@ -72,23 +72,6 @@ public class MainActivity extends AppCompatActivity {
 //        Log.e("file", "onCreate: "+ file.productFile);
 //        Log.e("file", "onCreate: "+ file.pro_list);
 
-        savebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                downloadFile();
-//                if (Build.VERSION.SDK_INT >=Build.VERSION_CODES.M){
-//                    if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)==
-//                            PackageManager.PERMISSION_DENIED){
-//                        String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
-//                        requestPermissions(permissions , PERMISION_STORAGE_CODE);
-//                    }else{
-//                        downloadFile();
-//                    }
-//                }else{
-//                    downloadFile();
-//                }
-            }
-        });
 
 
 
