@@ -8,11 +8,11 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:outlineAmbientShadowColor="@color/colorAccent"
         android:outlineSpotShadowColor="@color/colorAccent"
         app:cardCornerRadius="40dp"
-        android:layout_margin="20dp"
+        android:layout_margin="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -39,7 +39,7 @@
                 android:textSize="25dp"
                 android:textColor="@color/black"
                 android:layout_gravity="center"
-                android:textStyle="bold" />
+                />
 
             <LinearLayout
                 android:layout_width="wrap_content"
