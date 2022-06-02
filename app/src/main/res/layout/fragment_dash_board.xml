@@ -4,22 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DashBoardFragment"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    tools:context=".DashBoardFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF"
-        >
+        android:background="#FFFFFF">
 
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="0dp"
-            android:layout_height="230dp"
-            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -28,10 +27,9 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/customer_btn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
 
                 <RelativeLayout
                     android:id="@+id/customer"
@@ -51,8 +49,8 @@
 
                     <ImageView
                         android:id="@+id/bus"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/customer" />
@@ -61,10 +59,9 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/sypplier_btn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
 
                 <RelativeLayout
                     android:id="@+id/supplier"
@@ -91,29 +88,16 @@
                         app:srcCompat="@drawable/supplier" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="0dp"
-            android:layout_height="230dp"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/productbtn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
 
                 <RelativeLayout
                     android:id="@+id/product"
-                    android:layout_width="180dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <TextView
@@ -129,20 +113,54 @@
 
                     <ImageView
                         android:id="@+id/bus1"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
+                        android:layout_margin="20dp"
                         app:srcCompat="@drawable/product" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/category_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/Category"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/airplane"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:text="Category"
+                        android:textSize="15sp"
+                        app:fontFamily="@font/bungee" />
+
+                    <ImageView
+                        android:id="@+id/airplane"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        app:srcCompat="@drawable/cat" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/invoice_btn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
 
                 <RelativeLayout
                     android:id="@+id/invoice"
@@ -162,70 +180,26 @@
 
                     <ImageView
                         android:id="@+id/train"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
-                        app:srcCompat="@drawable/invoice" />
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="0dp"
-            android:layout_height="230dp"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/category_btn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
-
-                <RelativeLayout
-                    android:id="@+id/setting"
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent">
-
-                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/airplane"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
-                        android:text="@string/categorydash"
-                        android:textSize="15sp"
-                        app:fontFamily="@font/bungee" />
-
-                    <ImageView
-                        android:id="@+id/airplane"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
-                        app:srcCompat="@drawable/cat" />
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        app:srcCompat="@drawable/invsicon" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
-
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/reportbtn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
 
                 <RelativeLayout
                     android:id="@+id/report"
-                    android:layout_width="180dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <TextView
@@ -240,41 +214,26 @@
 
                     <ImageView
                         android:id="@+id/cycle"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
                         app:srcCompat="@drawable/report" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/linearLayout4"
-            android:layout_width="0dp"
-            android:layout_height="230dp"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
-
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/discount_btn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
 
                 <RelativeLayout
                     android:id="@+id/discount"
-                    android:layout_width="180dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <TextView
@@ -283,7 +242,7 @@
                         android:layout_below="@id/img"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
-                        android:text="@string/categorydash"
+                        android:text="discount"
                         android:textSize="15sp"
                         app:fontFamily="@font/bungee" />
 
@@ -292,12 +251,10 @@
                         android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
-                        app:srcCompat="@drawable/cat" />
+                        android:layout_margin="20dp"
+                        app:srcCompat="@drawable/discount" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
-
-
 
 
         </LinearLayout>
