@@ -81,7 +81,6 @@ public class InvoiceAdapter extends RecyclerView.Adapter<InvoiceAdapter.ProductH
         holder.product_code.setText(code);
         holder.product_price.setText(price);
         holder.product_unit.setText(unit);
-        holder.product_desc.setText(description);
 
         if (!product_List.get(position).getProImg().isEmpty()) {
             Glide.with(holder.itemView).load(image_product).into(holder.product_img);
@@ -114,7 +113,6 @@ public class InvoiceAdapter extends RecyclerView.Adapter<InvoiceAdapter.ProductH
         TextView product_unit;
         TextView product_cat;
         TextView product_supplier;
-        TextView product_desc;
         Button addToCartbtn;
 
         public ProductHolder(@NonNull View itemView) {
@@ -127,7 +125,6 @@ public class InvoiceAdapter extends RecyclerView.Adapter<InvoiceAdapter.ProductH
             product_unit = itemView.findViewById(R.id.product_unit);
             product_cat = itemView.findViewById(R.id.product_cat);
             product_supplier = itemView.findViewById(R.id.product_supplier);
-            product_desc = itemView.findViewById(R.id.product_desc);
             addToCartbtn = itemView.findViewById(R.id.addToCartbtn);
         }
 

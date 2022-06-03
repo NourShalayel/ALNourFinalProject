@@ -83,7 +83,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
         holder.product_code.setText(code);
         holder.product_price.setText(price);
         holder.product_unit.setText(unit);
-        holder.product_desc.setText(description);
 
         if (!product_List.get(position).getProImg().isEmpty()) {
             Glide.with(holder.itemView).load(image_product).into(holder.product_img);
@@ -140,7 +139,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
         TextView product_unit;
         TextView product_cat;
         TextView product_supplier;
-        TextView product_desc;
         ImageButton edit_btn;
         ImageButton delete_btn;
 
@@ -154,7 +152,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
             product_unit = itemView.findViewById(R.id.product_unit);
             product_cat = itemView.findViewById(R.id.product_cat);
             product_supplier = itemView.findViewById(R.id.product_supplier);
-            product_desc = itemView.findViewById(R.id.product_desc);
             edit_btn = itemView.findViewById(R.id.edit_btn);
             delete_btn = itemView.findViewById(R.id.delete_btn);
         }

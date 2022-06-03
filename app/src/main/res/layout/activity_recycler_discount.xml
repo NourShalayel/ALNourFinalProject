@@ -41,7 +41,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Code: "
+                        android:text="@string/code"
                         android:textSize="20dp"/>
 
                     <TextView
@@ -64,7 +64,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Percent: "
+                        android:text="@string/percent"
                         android:textSize="20dp"/>
 
                     <TextView

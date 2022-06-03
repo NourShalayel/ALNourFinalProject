@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:fontFamily="cursive"
-                android:text="Add Discount"
+                android:text="@string/add_discount"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                 android:textColor="@android:color/white"
                 android:textSize="35dp"
@@ -59,7 +59,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
-                    android:hint="discount code"
+                    android:hint="@string/discount_code"
                     android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -74,7 +74,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
-                    android:hint="discount percentage"
+                    android:hint="@string/discount_percentage"
                     android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -86,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_short"
                 android:background="@drawable/cornered_button"
-                android:text="Add Discount"
+                android:text="@string/add_discount"
                 android:textColor="@android:color/white"
 
                 android:textSize="18dp" />

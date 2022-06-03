@@ -21,6 +21,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -34,12 +36,15 @@ public class InvoiceProductFragment extends Fragment {
     Spinner cus_spinner;
     int cus_position;
     ArrayList<String> cusNamelist = new ArrayList<>();
-    private FirebaseDatabase db ;
-    private DatabaseReference ref ;
+    ArrayList<Discount> dis_list = new ArrayList<>();
+    private FirebaseDatabase db;
+    private DatabaseReference ref;
     Button checkoutbtn;
+    Button caldisbtn;
     RecyclerView rfProductsCart;
     TextView total;
     String selectedItem;
+    TextInputEditText code_name;
 
     public InvoiceProductFragment() {
     }
@@ -54,6 +59,10 @@ public class InvoiceProductFragment extends Fragment {
         total = v.findViewById(R.id.total);
         cus_spinner = v.findViewById(R.id.selectCustomer);
         checkoutbtn = v.findViewById(R.id.checkoutbtn);
+        code_name = v.findViewById(R.id.code_name);
+        caldisbtn = v.findViewById(R.id.caldisbtn);
+        String code = code_name.getText().toString();
+
 
         Bundle bundle = getArguments();
         ArrayList<Product> array_pro = bundle.getParcelableArrayList("ProductCart");
@@ -68,93 +77,10 @@ public class InvoiceProductFragment extends Fragment {
         rfProductsCart.setAdapter(adapter);
         rfProductsCart.setLayoutManager(new LinearLayoutManager((MainActivity) getActivity()));
 
-        cus_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                selectedItem = parent.getItemAtPosition(position).toString();
-                cus_position = position;
-                Log.e("e", "yessssssssssss" + "  " + selectedItem);
-            }
-
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-
-        checkoutbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (cus_position > 0) {
-                    Invoice inv = new Invoice(selectedItem, adapter.total, adapter.product_List);
-                    addInvoiceToDB(inv);
-
-                } else {
-                    Toast.makeText(getContext(), "choice customer !!", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
         return v;
 
     }
 
 
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        readCustomerNames();
-    }
-
-    public void readCustomerNames() {
-
-        cusNamelist.clear();
-
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
-        DatabaseReference ref = db.getReference("customers");
-        Task<DataSnapshot> task = ref.get();
-        task.addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (task.isSuccessful()) {
-                    Iterable<DataSnapshot> data = task.getResult().getChildren();
-                    cusNamelist.add("Select Customer");
-                    for (DataSnapshot snap : data) {
-                        Person sup = snap.getValue(Person.class);
-                        cusNamelist.add(sup.getName());
-                        Log.d("d", "" + sup);
-                    }
-                    if (cusNamelist != null && cusNamelist.size() != 0) {
-                        ArrayAdapter<String> sup_adapter = new ArrayAdapter<String>(getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, cusNamelist);
-                        cus_spinner.setAdapter(sup_adapter);
-                        sup_adapter.notifyDataSetChanged();
-                    }
-
-                } else {
-                    String errorMessage = task.getException().getMessage();
-                    Toast.makeText(getContext(), "Error: " + errorMessage, Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
-
-
-    private void addInvoiceToDB(Invoice inv) {
-        db = FirebaseDatabase.getInstance();
-        ref = db.getReference("invoices");
-        String id = ref.push().getKey();
-
-        ref.child(id).setValue(inv).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()) {
-                    Toast.makeText(getContext(), "checked out successfully", Toast.LENGTH_SHORT).show();
-                    getFragmentManager().popBackStackImmediate();
-                } else {
-                    String errorMessage = task.getException().getMessage();
-                    Toast.makeText(getContext(), "Fail " + errorMessage, Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
 }

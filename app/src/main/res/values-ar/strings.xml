@@ -70,5 +70,22 @@
     <string name="check_out">دفع</string>
     <string name="wholesale_price">السعر بالجملة</string>
 
+    <string name="discount">الخصم</string>
+    <string name="percent">النسبة:</string>
+    <string name="add_discount">أضف خصم</string>
+    <string name="discount_code">كود الخصم</string>
+    <string name="discount_percentage">نسبة الخصم</string>
+    <string name="discount_code_optional">كود الخصم (اختياري)</string>
+    <string name="download_category_file">تنزيل بيانات التصنيفات</string>
+    <string name="the_total_number_of_categories_is">العدد الإجمالي للتصنيفات :</string>
+    <string name="the_total_number_of_customers_is">العدد الإجمالي للزبائن :</string>
+    <string name="download_customer_file">تنزيل بيانات الزبائن</string>
+    <string name="sales_profit">الأرباح :</string>
+    <string name="the_total_number_of_invoice_is">العدد الإجمالي للفواتير :</string>
+    <string name="download_invoice_file"> تنزيل بيانات الفواتير</string>
+    <string name="download_supplier_file">تنزيل بينات العملاء</string>
+    <string name="the_total_number_of_suppliers_is">العدد الإجمالي للعملاء :</string>
+    <string name="make_discount">فعّل الخصم</string>
+
 
 </resources>

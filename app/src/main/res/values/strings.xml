@@ -69,7 +69,24 @@
     <string name="total">Total :</string>
     <string name="check_out">Check Out</string>
     <string name="wholesale_price">wholesale price</string>
+
+
     <string name="discount">Discount</string>
+    <string name="percent">Percent:</string>
+    <string name="add_discount">Add Discount</string>
+    <string name="discount_code">discount code</string>
+    <string name="discount_percentage">discount percentage</string>
+    <string name="discount_code_optional">discount code (optional)</string>
+    <string name="download_category_file">Download Category File</string>
+    <string name="the_total_number_of_categories_is">The total number of Categories is :</string>
+    <string name="the_total_number_of_customers_is">The total number of Customers is :</string>
+    <string name="download_customer_file">Download Customer File</string>
+    <string name="sales_profit">sales profit:</string>
+    <string name="the_total_number_of_invoice_is">The total number of Invoice is :</string>
+    <string name="download_invoice_file">Download Invoice File</string>
+    <string name="download_supplier_file">Download Supplier File</string>
+    <string name="the_total_number_of_suppliers_is">The total number of Suppliers is :</string>
+    <string name="make_discount">make discount</string>
 
 
 </resources>
