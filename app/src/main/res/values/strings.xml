@@ -87,6 +87,11 @@
     <string name="download_supplier_file">Download Supplier File</string>
     <string name="the_total_number_of_suppliers_is">The total number of Suppliers is :</string>
     <string name="make_discount">make discount</string>
-
+    <string-array name="title">
+        <item>Category</item>
+        <item>Customer</item>
+        <item>Supplier</item>
+        <item>Invoice</item>
+    </string-array>
 
 </resources>

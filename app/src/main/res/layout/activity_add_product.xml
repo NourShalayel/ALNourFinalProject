@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".AddProductActivity">
+    tools:context=".product.AddProductActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -173,12 +173,11 @@
                 <Spinner
                     android:id="@+id/selectCategory"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="10px"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:inputType="none"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:layout_margin="5dp"
+
                    />
 
 
@@ -186,12 +185,12 @@
                 <Spinner
                     android:id="@+id/selectSupplier"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="10px"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:inputType="none"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp" />
+                    android:layout_margin="5dp"
+
+                    />
 
 
 

@@ -7,10 +7,17 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.alnour.category.CategoryFragment;
+import com.example.alnour.customer.CustomerFragment;
+import com.example.alnour.discount.DiscountFragment;
+import com.example.alnour.invoice.InvoiceFragment;
+import com.example.alnour.pager.ReportsActivity;
+import com.example.alnour.product.ProductFragment;
+import com.example.alnour.supplier.SupplierFragment;
 
 
 public class DashBoardFragment extends Fragment {

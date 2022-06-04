@@ -8,13 +8,14 @@
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/activity_add_invoice.xml" value="0.16510416666666666" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/activity_add_product.xml" value="0.14947916666666666" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/activity_login.xml" value="0.16510416666666666" />
+        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/activity_resposive.xml" value="0.12291666666666666" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/activity_update_category.xml" value="0.1728395061728395" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/activity_update_product.xml" value="0.14947916666666666" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_customer.xml" value="0.16" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_invoice.xml" value="0.14356884057971014" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_product.xml" value="0.25" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_supplier.xml" value="0.17300724637681159" />
-        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_invoice_design.xml" value="0.25" />
+        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_invoice_design.xml" value="0.22" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_main.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_product_cartdes.xml" value="0.33" />
@@ -22,6 +23,7 @@
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_recycler_category.xml" value="0.22" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_recycler_des.xml" value="0.21" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_reports.xml" value="0.1" />
+        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_resposive.xml" value="0.25" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_splach.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_update_category.xml" value="0.17346014492753623" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_update_customer.xml" value="0.1" />

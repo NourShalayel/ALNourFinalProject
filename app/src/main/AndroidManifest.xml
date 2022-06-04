@@ -13,52 +13,55 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlNour">
         <activity
-            android:name=".RecyclerDiscountActivity"
+            android:name=".Resposive"
             android:exported="false" />
         <activity
-            android:name=".UpdateProductActivity"
+            android:name=".discount.RecyclerDiscountActivity"
             android:exported="false" />
         <activity
-            android:name=".RecyclerCategoryActivity"
+            android:name=".product.UpdateProductActivity"
             android:exported="false" />
         <activity
-            android:name=".UpdateCategoryActivity"
+            android:name=".category.RecyclerCategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".AddCategoryActivity"
+            android:name=".category.UpdateCategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".ReportsActivity"
+            android:name=".category.AddCategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".ProductCartdesActivity"
+            android:name=".pager.ReportsActivity"
             android:exported="false" />
         <activity
-            android:name=".InvoiceDesign"
+            android:name=".invoice.ProductCartdesActivity"
             android:exported="false" />
         <activity
-            android:name=".ProductDesign"
+            android:name=".invoice.InvoiceDesign"
             android:exported="false" />
         <activity
-            android:name=".AddProductActivity"
+            android:name=".product.ProductDesign"
             android:exported="false" />
         <activity
-            android:name=".UpdateSupplierActivity"
+            android:name=".product.AddProductActivity"
             android:exported="false" />
         <activity
-            android:name=".AddSupplierActivity"
+            android:name=".product.UpdateProductActivity$UpdateSupplierActivity"
             android:exported="false" />
         <activity
-            android:name=".UpdateCustomerActivity"
+            android:name=".supplier.AddSupplierActivity"
             android:exported="false" />
         <activity
-            android:name=".AddCustomerActivity"
+            android:name=".customer.UpdateCustomerActivity"
             android:exported="false" />
         <activity
-            android:name=".AddDiscountActivity"
+            android:name=".customer.AddCustomerActivity"
             android:exported="false" />
         <activity
-            android:name=".RecyclerActivityDes"
+            android:name=".discount.AddDiscountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".customer.RecyclerActivityDes"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"

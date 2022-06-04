@@ -86,6 +86,11 @@
     <string name="download_supplier_file">تنزيل بينات العملاء</string>
     <string name="the_total_number_of_suppliers_is">العدد الإجمالي للعملاء :</string>
     <string name="make_discount">فعّل الخصم</string>
-
+    <string-array name="title">
+        <item>التصنيفات</item>
+        <item>الزبائن</item>
+        <item>الموزعين</item>
+        <item>الفواتير</item>
+    </string-array>
 
 </resources>
