@@ -12,6 +12,7 @@
     <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#212121</color>
     <color name="colorAccent">#ff6d00</color>
+    <color name="backCat">#86FF6D00</color>
     <color name="colortrans">#27FF6D00</color>
     <color name="bordertrans">#20000000</color>
     <color name="coloricon">#B5FF6D00</color>

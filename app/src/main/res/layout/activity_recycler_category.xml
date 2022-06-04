@@ -1,76 +1,95 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="130dp"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".category.RecyclerCategoryActivity">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:outlineAmbientShadowColor="@color/colorAccent"
-        android:outlineSpotShadowColor="@color/colorAccent"
-        app:cardCornerRadius="40dp"
-        android:layout_margin="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/downtime_reporting_row_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/white"
+        card_view:cardCornerRadius="12dp"
+        card_view:cardElevation="2dp"
+        android:layout_weight="2"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_margin="20dp">
 
         <LinearLayout
-
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:background="@drawable/background_btn"
-            >
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:background="@color/backCat">
 
-
-            <TextView
-                android:id="@+id/catNameDesign"
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Categoty"
-                android:textSize="25dp"
-                android:textColor="@color/black"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                />
+                android:layout_margin="10dp"
+                android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginStart="120dp"
-                >
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
 
-                <ImageButton
-                    android:id="@+id/edit_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/pedit"
-                    android:backgroundTint="@color/tran"
-                    android:layout_marginEnd="30dp"/>
+                    >
 
-                <ImageButton
-                    android:id="@+id/delete_btn"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+
+                    <ImageButton
+                        android:id="@+id/edit_btn"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/tran"
+                        android:src="@drawable/pedit"
+
+                        />
+
+                    <ImageButton
+                        android:id="@+id/delete_btn"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/tran"
+                        android:src="@drawable/pdelete" />
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/catNameDesign"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
                     android:layout_gravity="center"
-                    android:src="@drawable/pdelete"
-                    android:backgroundTint="@color/tran"/>
+                    android:layout_marginEnd="15dp"
+                    android:gravity="center_vertical"
+                    android:text="Categoty"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:weightSum="100">
 
-            </LinearLayout>
 
+                </TextView>
+
+            </RelativeLayout>
         </LinearLayout>
-
-
     </androidx.cardview.widget.CardView>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
