@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/drawable/background_btn.xml" value="0.1" />
+        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/drawable/serach_view.xml" value="0.141" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/activity_add_customer.xml" value="0.16510416666666666" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/activity_add_invoice.xml" value="0.16510416666666666" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/activity_add_product.xml" value="0.14947916666666666" />
@@ -12,6 +13,7 @@
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/activity_update_category.xml" value="0.1728395061728395" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/activity_update_product.xml" value="0.14947916666666666" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout-land/fragment_invoice_product.xml" value="0.21" />
+        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_category.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_customer.xml" value="0.16" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_discount.xml" value="0.16802536231884058" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/activity_add_invoice.xml" value="0.14356884057971014" />
@@ -40,6 +42,7 @@
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/fragment_pager_customer.xml" value="0.13722826086956522" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/fragment_pager_invoice.xml" value="0.13677536231884058" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/fragment_pager_supplier.xml" value="0.13722826086956522" />
+        <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/fragment_product.xml" value="0.13179347826086957" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/ALNourFinalProject/app/src/main/res/layout/fragment_supplier.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/drawable/cornered_button.xml" value="0.1" />
         <entry key="..\:/Users/NOOR/AndroidStudioProjects/AlNour/app/src/main/res/drawable/ic_graphic_eq_orange_24dp.xml" value="0.1" />
