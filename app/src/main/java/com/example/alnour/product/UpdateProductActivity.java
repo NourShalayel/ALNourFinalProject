@@ -218,9 +218,21 @@ Double wholesale ;
                         cat_list.add(cat);
                         Log.d("d", "" + cat);
 
-                        ArrayAdapter<String> cat_adapter = new ArrayAdapter<String>(getApplicationContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, cat_items);
-                        cat_spinner.setAdapter(cat_adapter);
-                        cat_adapter.notifyDataSetChanged();
+                        if (cat_items != null && cat_items.size() != 0) {
+                            ArrayAdapter<String> cat_adapter = new ArrayAdapter<String>(getApplicationContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, cat_items);
+                            cat_spinner.setAdapter(cat_adapter);
+                            cat_adapter.notifyDataSetChanged();
+                        }
+
+                        for (int i = 0; i < cat_list.size(); i++) {
+                            Log.e("eeee", cat_spinner.getItemAtPosition(i) + "");
+                            if (cat_spinner.getItemAtPosition(i).toString().equals(cat_name)) {
+                                cat_spinner.setSelection(i);
+                                break;
+                            }
+                        }
+
+
                     }
                 } else {
                     String errorMessage = task.getException().getMessage();
