@@ -78,6 +78,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/customer_call"
+                        android:maxLength="10"
                         android:id="@+id/cus_phonenumber"
                         android:inputType="number"
                         android:paddingBottom="16dp"
