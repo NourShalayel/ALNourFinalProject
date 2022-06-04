@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -17,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -66,6 +68,7 @@ Double wholesale ;
     Uri selectedImage;
     String imageUrl;
     FloatingActionButton selectImg_btn;
+    TextView txtlogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +80,10 @@ Double wholesale ;
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
 
         setContentView(R.layout.activity_update_product);
+        txtlogin = findViewById(R.id.txtlogin);
 
+        Typeface typeface = getResources().getFont(R.font.bungee);
+        txtlogin.setTypeface(typeface);
         init();
 
         Bundle b = getIntent().getExtras();

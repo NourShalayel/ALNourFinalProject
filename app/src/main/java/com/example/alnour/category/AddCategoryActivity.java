@@ -38,14 +38,16 @@ public class AddCategoryActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_add_category);
 
+        txtlogin = findViewById(R.id.txtlogin);
 
+
+        Typeface typeface = getResources().getFont(R.font.bungee);
+        txtlogin.setTypeface(typeface);
         cat_name = findViewById(R.id.cat_name);
         addCategory = findViewById(R.id.addCategory);
         addCategory = findViewById(R.id.addCategory);
         txtlogin = findViewById(R.id.txtlogin);
 
-        Typeface typeface = getResources().getFont(R.font.bungee);
-        txtlogin.setTypeface(typeface);
 
         addCategory.setOnClickListener(new View.OnClickListener() {
             @Override

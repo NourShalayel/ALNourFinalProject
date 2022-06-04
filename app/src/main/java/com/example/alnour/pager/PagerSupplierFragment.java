@@ -126,7 +126,7 @@ public class PagerSupplierFragment extends Fragment {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                            Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override

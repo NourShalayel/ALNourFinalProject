@@ -1,11 +1,13 @@
 package com.example.alnour.supplier;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +23,7 @@ public  class UpdateSupplierActivity extends AppCompatActivity {
     Intent intent ;
     String id ;
     Button updatesupplierbtn ;
+    TextView txtlogin ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,11 @@ public  class UpdateSupplierActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_update_supplier);
         init();
+        txtlogin = findViewById(R.id.txtlogin);
+
+
+        Typeface typeface = getResources().getFont(R.font.bungee);
+        txtlogin.setTypeface(typeface);
 
         Bundle b = getIntent().getExtras();
 
