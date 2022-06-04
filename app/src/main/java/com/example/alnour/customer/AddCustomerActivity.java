@@ -39,8 +39,8 @@ public class AddCustomerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_customer);
         init();
 
-        Typeface typeface = getResources().getFont(R.font.bungee);
-        txtlogin.setTypeface(typeface);
+//        Typeface typeface = getResources().getFont(R.font.bungee);
+//        txtlogin.setTypeface(typeface);
 
         addcustomerbtn.setOnClickListener(new View.OnClickListener() {
             @Override

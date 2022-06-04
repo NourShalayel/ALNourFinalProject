@@ -51,11 +51,11 @@
     <string name="customer">الزبائن</string>
     <string name="al_nour">النور</string>
     <string name="al_nour_sale_point">نقطة بيع النور</string>
-    <string name="update_category">تعديل بينات التصنيف</string>
-    <string name="update_customer">تعديل بينات الزبون</string>
+    <string name="update_category">تعديل بيانات التصنيف</string>
+    <string name="update_customer">تعديل بيانات الزبون</string>
 
-    <string name="update_product">تعديل بينات المنتج</string>
-    <string name="update_supplier">تعديل بينات الموزع</string>
+    <string name="update_product">تعديل بيانات المنتج</string>
+    <string name="update_supplier">تعديل بيانات الموزع</string>
 
     <string name="supplier_address">عنوان الموزع</string>
     <string name="supplier_email">ايميل الموزع</string>
@@ -83,7 +83,7 @@
     <string name="sales_profit">الأرباح :</string>
     <string name="the_total_number_of_invoice_is">العدد الإجمالي للفواتير :</string>
     <string name="download_invoice_file"> تنزيل بيانات الفواتير</string>
-    <string name="download_supplier_file">تنزيل بينات العملاء</string>
+    <string name="download_supplier_file">تنزيل بيانات العملاء</string>
     <string name="the_total_number_of_suppliers_is">العدد الإجمالي للعملاء :</string>
     <string name="make_discount">فعّل الخصم</string>
     <string-array name="title">

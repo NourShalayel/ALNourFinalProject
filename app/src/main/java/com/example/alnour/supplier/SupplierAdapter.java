@@ -62,7 +62,7 @@ public class SupplierAdapter extends RecyclerView.Adapter<SupplierAdapter.Suppli
         holder.edit_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, UpdateProductActivity.UpdateSupplierActivity.class);
+                Intent intent = new Intent(context, UpdateSupplierActivity.class);
                 Bundle bundle = new Bundle();
                 intent.putExtra("id", supplierId);
                 intent.putExtra("name" , name );
