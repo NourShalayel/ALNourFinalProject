@@ -16,7 +16,7 @@
         android:layout_marginTop="70sp"
         android:layout_marginEnd="70dp"
         android:layout_marginBottom="70dp"
-        android:src="@drawable/logoorange"
+        android:src="@drawable/splashicon"
         android:transitionName="logo_image"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
