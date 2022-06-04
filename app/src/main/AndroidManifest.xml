@@ -46,7 +46,7 @@
             android:name=".product.AddProductActivity"
             android:exported="false" />
         <activity
-            android:name=".product.UpdateProductActivity$UpdateSupplierActivity"
+            android:name=".supplier.UpdateSupplierActivity"
             android:exported="false" />
         <activity
             android:name=".supplier.AddSupplierActivity"
