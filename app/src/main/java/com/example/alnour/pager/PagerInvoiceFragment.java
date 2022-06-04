@@ -57,6 +57,9 @@ public class PagerInvoiceFragment extends Fragment {
     double total_price;
 
     public PagerInvoiceFragment() {
+        readWholeFromDB();
+        readInvoiceFromDB();
+        readPriceFromDB();
         // Required empty public constructor
     }
 
@@ -71,8 +74,7 @@ public class PagerInvoiceFragment extends Fragment {
         TotalProfit = v.findViewById(R.id.TotalProfit);
         downloadInv_btn = v.findViewById(R.id.downloadInv_btn);
 
-        readInvoiceFromDB();
-        readPriceFromDB();
+
         downloadInv_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +84,29 @@ public class PagerInvoiceFragment extends Fragment {
         return v;
     }
 
+    public void readWholeFromDB() {
 
+        total_wholesale = 0;
+
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference ref = db.getReference("products");
+        Task<DataSnapshot> taskk = ref.get();
+        taskk.addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (taskk.isSuccessful()) {
+                    Iterable<DataSnapshot> data = taskk.getResult().getChildren();
+                    for (DataSnapshot snap : data) {
+                        Product pro = snap.getValue(Product.class);
+                        total_wholesale += pro.getWholeSale();
+                    }
+                } else {
+                    String errorMessage = taskk.getException().getMessage();
+                    Toast.makeText(getActivity(), "Error: " + errorMessage, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
     public void readPriceFromDB() {
 
         total_price = 0;
@@ -103,27 +127,9 @@ public class PagerInvoiceFragment extends Fragment {
                         counter++;
                     }
                     countInvoice.setText(counter + "");
-                    total_wholesale = 0;
 
-                    FirebaseDatabase db = FirebaseDatabase.getInstance();
-                    DatabaseReference ref = db.getReference("products");
-                    Task<DataSnapshot> taskk = ref.get();
-                    taskk.addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<DataSnapshot> task) {
-                            if (taskk.isSuccessful()) {
-                                Iterable<DataSnapshot> data = taskk.getResult().getChildren();
-                                for (DataSnapshot snap : data) {
-                                    Product pro = snap.getValue(Product.class);
-                                    total_wholesale += pro.getWholeSale();
-                                }
-                            } else {
-                                String errorMessage = taskk.getException().getMessage();
-                                Toast.makeText(getActivity(), "Error: " + errorMessage, Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-
+                    Log.e("tt", total_price + "total_price");
+                    Log.e("tt", total_wholesale + "total_wholesale");
                     profit = total_price - total_wholesale;
                     if (profit > 0) {
                         TotalProfit.setTextColor(Color.GREEN);
