@@ -35,40 +35,16 @@
                 android:layout_margin="10dp"
                 android:orientation="vertical">
 
-            <LinearLayout
+            <ImageButton
+                android:id="@+id/delete_btn"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="2dp"
                 android:layout_marginEnd="20dp"
                 android:gravity="center"
-                android:orientation="horizontal"
-
-                >
-
-
-                <ImageButton
-                    android:id="@+id/edit_btn"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/tran"
-                    android:src="@drawable/pedit"
-
-                    />
-
-                <ImageButton
-                    android:id="@+id/delete_btn"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/tran"
-                    android:src="@drawable/pdelete" />
-
-
-            </LinearLayout>
+                android:backgroundTint="@color/tran"
+                android:src="@drawable/pdelete"/>
 
 
                 <LinearLayout

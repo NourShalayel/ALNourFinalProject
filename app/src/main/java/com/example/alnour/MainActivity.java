@@ -30,6 +30,7 @@ import android.widget.Button;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.example.alnour.R;
 import com.example.alnour.classes.Person;
 import com.example.alnour.classes.Product;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -55,16 +56,11 @@ import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-     SearchView searchView;
     ArrayList<Product> pro_list = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        searchView = (SearchView) findViewById(R.id.serach_view);
-
-
 
 
     }

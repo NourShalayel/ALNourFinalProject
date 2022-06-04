@@ -28,6 +28,7 @@
                 android:src="@drawable/logoorange"/>
 
             <TextView
+                android:id="@+id/txtlogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/update_customer"
@@ -118,7 +119,7 @@
                 android:background="@drawable/cornered_button"
                 android:text="@string/update_customer"
                 android:textSize="18dp"
-                android:id="@+id/updateCustomer"
+                android:id="@+id/updateCustomerbtn"
 
                 android:textColor="@android:color/white" />
 

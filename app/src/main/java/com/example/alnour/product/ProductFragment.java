@@ -6,7 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
-
+import com.example.alnour.MainActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +40,6 @@ public class ProductFragment extends Fragment {
     FloatingActionButton addProduct ;
     ArrayList<Person> sup_list = new ArrayList<>();
     ArrayList<Category> cat_list = new ArrayList<>();
-    MainActivity mainActivity ;
 
     public ProductFragment() {
         // Required empty public constructor
@@ -63,19 +62,6 @@ public class ProductFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext() , AddProductActivity.class);
                 startActivity(intent);
-            }
-        });
-        mainActivity.searchView.clearFocus();
-        mainActivity.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                fileList(newText);
-                return true;
             }
         });
 
@@ -173,19 +159,4 @@ public class ProductFragment extends Fragment {
             }
         });
     }
-
-    private void fileList(String newText) {
-        List<Product> filterList = new ArrayList<>();
-        for(Product pro : pro_list){
-            if(pro.getName().toLowerCase().contains(newText.toLowerCase())){
-                filterList.add(pro);
-            }
-        }
-        if(filterList.isEmpty()){
-            Toast.makeText(getContext() , "No Data Found" , Toast.LENGTH_SHORT).show();
-        }else{
-
-        }
-    }
-
 }
