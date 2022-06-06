@@ -290,5 +290,6 @@ public class InvoiceProductAdapter extends RecyclerView.Adapter<InvoiceProductAd
         });
     }
 
+
 }
 

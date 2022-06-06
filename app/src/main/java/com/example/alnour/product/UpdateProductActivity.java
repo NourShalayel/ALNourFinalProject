@@ -155,6 +155,7 @@ Double wholesale ;
     }
 
 
+
     public boolean UpdateProduct() {
         DatabaseReference refCus = FirebaseDatabase.getInstance().getReference("products").child(id);
 
